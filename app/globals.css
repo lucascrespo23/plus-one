@@ -89,6 +89,21 @@ h3,h4 { font-family: 'Signifier', Georgia, serif; }
 .num-container { border: 1px solid rgba(26,26,26,0.08); border-radius: 8px; padding: 8px 16px; background: white; flex-shrink: 0; }
 .num-text { font-family: "Signifier", Georgia, serif; font-size: 24px; font-weight: 400; color: rgba(26,26,26,0.1); letter-spacing: -0.02em; }
 
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animate {
+  background: linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3) !important;
+  background-size: 200% 100% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: gradient-shift 3s ease infinite !important;
+}
+
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 .passport-card { background: linear-gradient(135deg, #f8f6ff, #fff); border: 1px solid #e8e4f0; border-radius: 12px; padding: 24px; min-width: 280px; transition: all 0.2s ease; }

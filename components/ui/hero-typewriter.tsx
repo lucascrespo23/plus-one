@@ -39,12 +39,12 @@ export function HeroTypewriter() {
       {displayText.endsWith("+1") ? (
         <>
           {displayText.slice(0, -2)}
-          <span style={{background: "linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"}}>+1</span>
+          <span className="gradient-animate">+1</span>
         </>
       ) : displayText.endsWith("+") ? (
         <>
           {displayText.slice(0, -1)}
-          <span style={{background: "linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"}}>+</span>
+          <span className="gradient-animate">+</span>
         </>
       ) : (
         displayText
