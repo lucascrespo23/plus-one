@@ -14,7 +14,7 @@ const ROLES: { id: string; label: string; title: string; bullets: string[]; imag
   { id: "product", label: "Product Managers", title: "Product Managers", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
   { id: "research", label: "Research & Analysis", title: "Research & Analysis", bullets: ["Data collection & cleaning", "Trend analysis", "Report generation", "Market research"] },
   { id: "operations", label: "Operations", title: "Operations", bullets: ["Process automation", "Tool migrations", "Vendor coordination", "Workflow optimization"] },
-  { id: "sales", label: "Sales", title: "Sales", bullets: ["Lead qualification", "CRM management", "Follow-up sequences", "Pipeline reporting"] },
+  { id: "sales", label: "Sales", title: "Sales", bullets: ["Lead qualification", "CRM management", "Follow-up sequences", "Pipeline reporting"], image: "/img/role-sales.jpg" },
 ];
 
 export default function RolesSection() {
