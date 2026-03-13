@@ -511,11 +511,11 @@ export default function Home() {
     <>
       <div dangerouslySetInnerHTML={{ __html: BEFORE_BENTO }} />
 
-      <section style={{ padding: "100px 64px" }}>
-        <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px" }}>
+      <section style={{ padding: "140px 64px" }}>
+        <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px", textAlign: "center" }}>
           Plus ones are smart
         </h2>
-        <p style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", color: "rgba(26,26,26,0.5)", margin: "0 0 48px 0" }}>
+        <p style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", color: "rgba(26,26,26,0.5)", margin: "0 0 48px 0", textAlign: "center" }}>
           Seven capabilities that make your +1 indispensable.
         </p>
         <Bucket />
