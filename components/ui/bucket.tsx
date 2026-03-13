@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const FEATURES = [
-  { id: 1, title: "Every", description: "The full suite of Every apps", icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>' },
+  { id: 1, title: "Every", description: "The full suite of Every apps", icon: '<img src="/img/every-icon.png" width="18" height="18" style="mix-blend-mode:multiply" alt="E" />' },
   { id: 2, title: "Extendable", description: "Integrates any app via API or MCP", icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>' },
   { id: 3, title: "Secure", description: "Encrypted and private by default", icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>' },
   { id: 4, title: "Collaborative", description: "Works with agents and humans", icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>' },
