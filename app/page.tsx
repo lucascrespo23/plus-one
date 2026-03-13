@@ -20,7 +20,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
     </div>
 
     <h1 id="hero-headline" class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
-      Promote yourself with a <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">+1</span>
+      Promote yourself with a <span style="background: linear-gradient(to right, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">+1</span>
     </h1>
 
     <p class="text-[#1A1A1A]/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
