@@ -40,7 +40,7 @@ export function HeroTypewriter() {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
-    animation: "gradient-scroll 6s linear infinite",
+    animation: "gradient-scroll 20s linear infinite",
   };
 
   return createPortal(
