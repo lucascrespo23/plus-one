@@ -164,7 +164,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
 <!-- HOW IT WORKS -->
 <section id="how-it-works">
-<div style="border-top:1px solid rgba(26,26,26,0.063);display:flex;flex-direction:column;font-size:12px;gap:48px;line-height:16px;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
+<div style="margin-top:80px;border-top:1px solid rgba(26,26,26,0.063);display:flex;flex-direction:column;font-size:12px;gap:48px;line-height:16px;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
   <div style="display:flex;flex-direction:column;gap:12px;">
     <h2 style="margin:0;color:#1A1A1A;font-family:'Signifier',Georgia,serif;font-size:45px;font-weight:400;letter-spacing:-0.03em;line-height:54px;">How to 10x your work</h2>
   </div>
