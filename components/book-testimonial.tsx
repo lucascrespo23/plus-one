@@ -141,7 +141,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -395,6 +395,45 @@ export default function BookTestimonial() {
               </p>
             </div>
           </HTMLFlipBook>
+          {/* Arrow controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 20 }}>
+            <button
+              onClick={() => book.current?.pageFlip()?.flipPrev()}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 8,
+                color: '#999',
+                fontSize: 20,
+                lineHeight: 1,
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+              aria-label="Previous page"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => book.current?.pageFlip()?.flipNext()}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 8,
+                color: '#999',
+                fontSize: 20,
+                lineHeight: 1,
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+              aria-label="Next page"
+            >
+              →
+            </button>
+          </div>
         </div>
       </div>
     </section>
