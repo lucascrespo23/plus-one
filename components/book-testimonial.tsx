@@ -142,22 +142,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ position: 'relative', overflow: 'visible' }}>
-            {/* Made by Every stamp — hidden behind the book, revealed on back cover */}
-            <img
-              src="/img/made-by-every.jpg"
-              alt="Made by Every"
-              style={{
-                position: 'absolute',
-                right: -20,
-                bottom: 40,
-                width: 200,
-                opacity: 0.9,
-                zIndex: -1,
-                pointerEvents: 'none',
-              }}
-            />
+        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -393,7 +378,20 @@ export default function BookTestimonial() {
               </p>
             </div>
           </HTMLFlipBook>
-          </div>
+            {/* Made by Every stamp — revealed when back cover is on left */}
+            <img
+              src="/img/made-by-every.jpg"
+              alt="Made by Every"
+              style={{
+                position: 'absolute',
+                right: -40,
+                bottom: 60,
+                width: 220,
+                opacity: 0.85,
+                zIndex: 1,
+                pointerEvents: 'none',
+              }}
+            />
 
           {/* Arrow controls — below the book */}
           <div
