@@ -516,7 +516,7 @@ export default function Home() {
           Plus ones are smart
         </h2>
         <p style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", color: "rgba(26,26,26,0.5)", margin: "0 0 48px 0", textAlign: "center" }}>
-          Seven capabilities that make your +1 indispensable.
+          Tons of capabilities that make your Plus One indispensable.
         </p>
         <div style={{ marginTop: "100px" }}>
           <Bucket />
