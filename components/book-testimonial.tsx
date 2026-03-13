@@ -84,25 +84,6 @@ export default function BookTestimonial() {
     book.current?.pageFlip()?.flip(page)
   }, [])
 
-  // Force the empty spread slot transparent + move stamp visibility
-  // The library overwrites style.cssText, so we fight it with setProperty every 100ms
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const items = document.querySelectorAll('.stf__item')
-      // In spread mode with 14 pages + showCover, library creates 15 stf__items
-      // (14 pages + 1 empty slot). The empty slot is the LAST one.
-      // We make ALL stf__items after our 14 pages transparent.
-      items.forEach((item, index) => {
-        if (index >= 14) {
-          const el = item as HTMLElement
-          el.style.setProperty('background', '#F3F2EE', 'important')
-          el.style.setProperty('box-shadow', 'none', 'important')
-        }
-      })
-    }, 50)
-    return () => clearInterval(interval)
-  }, [])
-
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
@@ -162,22 +143,6 @@ export default function BookTestimonial() {
 
         {/* Right: Book */}
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-          {/* Made by Every stamp — instantly appears on back cover, no transition */}
-          <img
-            src="/img/made-by-every.jpg"
-            alt="Made by Every"
-            style={{
-              position: 'absolute',
-              right: 40,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: 200,
-              opacity: currentPage >= totalPages - 1 ? 0.85 : 0,
-              visibility: currentPage >= totalPages - 1 ? 'visible' : 'hidden',
-              zIndex: 10,
-              pointerEvents: 'none',
-            }}
-          />
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
