@@ -148,7 +148,7 @@ export default function BookTestimonial() {
             width={340}
             height={480}
             showCover={true}
-            drawShadow={false}
+            drawShadow={true}
             flippingTime={800}
             usePortrait={false}
             startPage={0}
