@@ -206,7 +206,7 @@ export default function BookTestimonial() {
                 }}
               >
                 <div style={{
-                  padding: '48px 39px 48px 40px',
+                  padding: '48px 40px',
                   width: '100%',
                   height: '100%',
                   display: 'flex',
@@ -215,7 +215,6 @@ export default function BookTestimonial() {
                   justifyContent: 'center',
                   textAlign: 'center',
                   boxSizing: 'border-box',
-                  borderRight: '1px dashed #ccc',
                 }}>
                 <img
                   src={agent.img}
