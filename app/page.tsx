@@ -11,7 +11,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
   <div class="section-max relative z-10 text-center">
     <div class="inline-flex items-center gap-2 bg-[#1A1A1A]/5 border border-[#1A1A1A]/10 rounded-full px-4 py-1.5 mb-6">
-      <span class="text-[#1A1A1A]/50 text-xs font-medium">Powered by OpenClaw</span>
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 6px 2px rgba(74,222,128,0.6);margin-right:6px;vertical-align:middle"></span><span class="text-[#1A1A1A]/50 text-xs font-medium">Powered by OpenClaw</span>
     </div>
 
     <!-- Hero Image -->
