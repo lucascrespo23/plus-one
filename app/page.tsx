@@ -1,6 +1,7 @@
 import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { Typewriter } from "@/components/ui/typewriter-text";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -18,9 +19,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
       <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:416px; width:52%; margin:0 auto; display:block;">
     </div>
 
-    <h1 class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
-      Promote yourself<br>with a <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">+1</span>
-    </h1>
+    <div id="hero-headline-placeholder"></div>
 
     <p class="text-[#1A1A1A]/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
       Get your own OpenClaw with 1-click, launched on a secure server run by Every and powered with out-of-the-box skills, preferences, and connections to our apps.
@@ -587,13 +586,31 @@ const MARQUEE_HTML = `
 // Split BEFORE_BENTO: hero ends at first </section>, rest follows
 const HERO_END_MARKER = '<!-- THE OPPORTUNITY -->';
 const heroEndIdx = BEFORE_BENTO.indexOf(HERO_END_MARKER);
-const HERO_HTML = BEFORE_BENTO.slice(0, heroEndIdx);
+const HERO_HTML_FULL = BEFORE_BENTO.slice(0, heroEndIdx);
 const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
+
+const HERO_SPLIT_MARKER = '<div id="hero-headline-placeholder"></div>';
+const heroSplitIdx = HERO_HTML_FULL.indexOf(HERO_SPLIT_MARKER);
+const HERO_BEFORE_H1 = HERO_HTML_FULL.slice(0, heroSplitIdx);
+const HERO_AFTER_H1 = HERO_HTML_FULL.slice(heroSplitIdx + HERO_SPLIT_MARKER.length);
 
 export default function Home() {
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
+      <div dangerouslySetInnerHTML={{ __html: HERO_BEFORE_H1 }} />
+      <h1 className="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight text-center" style={{ fontFamily: "'Signifier', Georgia, serif" }}>
+        <Typewriter
+          text={["Promote yourself", "10x your output", "Work smarter"]}
+          speed={80}
+          loop={true}
+          deleteSpeed={40}
+          delay={2000}
+          className=""
+        />
+        <br />
+        with a <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">+1</span>
+      </h1>
+      <div dangerouslySetInnerHTML={{ __html: HERO_AFTER_H1 }} />
 
       <ContainerScroll
         titleComponent={
