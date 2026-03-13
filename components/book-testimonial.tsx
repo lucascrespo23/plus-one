@@ -141,7 +141,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ flex: '0 0 auto', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -396,8 +396,8 @@ export default function BookTestimonial() {
             </div>
           </HTMLFlipBook>
 
-          {/* Arrow controls — centered below the book spread */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, marginTop: 28 }}>
+          {/* Arrow controls — overlaid on the book spread, vertically centered */}
+          <div style={{ position: 'absolute', top: '50%', left: 0, right: 0, transform: 'translateY(-50%)', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, pointerEvents: 'none', zIndex: 10 }}>
         <button
           onClick={() => book.current?.pageFlip()?.flipPrev()}
           style={{
@@ -409,6 +409,7 @@ export default function BookTestimonial() {
             fontSize: 24,
             lineHeight: 1,
             transition: 'color 0.2s',
+            pointerEvents: 'auto',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
           onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
@@ -427,6 +428,7 @@ export default function BookTestimonial() {
             fontSize: 24,
             lineHeight: 1,
             transition: 'color 0.2s',
+            pointerEvents: 'auto',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
           onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
