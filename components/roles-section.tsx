@@ -21,6 +21,7 @@ export default function RolesSection() {
   const [activeTab, setActiveTab] = useState(ROLES[0].id);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Auto-rotate every 4s
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -36,55 +37,52 @@ export default function RolesSection() {
 
   return (
     <section style={{ background: "#F3F2EE", padding: "100px 64px" }}>
-      <div
-        style={{ display: "flex", gap: "64px", alignItems: "flex-start" }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        {/* Left: headline + subhead + tabs */}
-        <div style={{ width: "280px", flexShrink: 0, position: "sticky", top: "100px" }}>
-          <h2 style={{ margin: "0 0 12px 0", color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "40px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "48px" }}>
-            A +1 for every style of work
-          </h2>
-          <p style={{ color: "rgba(26,26,26,0.5)", fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "16px", margin: "0 0 36px 0", lineHeight: "1.5" }}>
-            No matter who you are and what you do, a +1 will help.
-          </p>
+      <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px" }}>
+        A +1 for every style of work
+      </h2>
+      <p style={{ color: "rgba(26,26,26,0.5)", fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", marginTop: "12px", marginBottom: "48px" }}>
+        No matter who you are and what you do, a +1 will help.
+      </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            {ROLES.map(role => (
-              <button
-                key={role.id}
-                onClick={() => { setActiveTab(role.id); setIsPaused(true); setTimeout(() => setIsPaused(false), 6000); }}
-                style={{
-                  position: "relative",
-                  textAlign: "left",
-                  padding: "12px 20px",
-                  borderRadius: "12px",
-                  fontSize: "14px",
-                  fontFamily: "'Switzer', system-ui, sans-serif",
-                  cursor: "pointer",
-                  border: "none",
-                  background: activeTab === role.id ? "#1A1A1A" : "transparent",
-                  color: activeTab === role.id ? "#fff" : "#666",
-                  transition: "background 0.2s, color 0.2s",
-                }}
-              >
-                {activeTab === role.id && (
-                  <motion.div
-                    layoutId="active-role-tab"
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "#1A1A1A",
-                      borderRadius: "12px",
-                    }}
-                    transition={{ type: "spring", duration: 0.5 }}
-                  />
-                )}
-                <span style={{ position: "relative", zIndex: 10 }}>{role.label}</span>
-              </button>
-            ))}
-          </div>
+      <div style={{ display: "flex", gap: "32px", alignItems: "stretch" }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => { setIsPaused(false); }}
+      >
+        {/* Left: vertical tabs */}
+        <div style={{ width: "280px", flexShrink: 0, display: "flex", flexDirection: "column", gap: "4px" }}>
+          {ROLES.map(role => (
+            <button
+              key={role.id}
+              onClick={() => { setActiveTab(role.id); setIsPaused(true); setTimeout(() => setIsPaused(false), 6000); }}
+              style={{
+                position: "relative",
+                textAlign: "left",
+                padding: "12px 20px",
+                borderRadius: "12px",
+                fontSize: "14px",
+                fontFamily: "'Switzer', system-ui, sans-serif",
+                cursor: "pointer",
+                border: "none",
+                background: activeTab === role.id ? "#1A1A1A" : "transparent",
+                color: activeTab === role.id ? "#fff" : "#666",
+                transition: "background 0.2s, color 0.2s",
+              }}
+            >
+              {activeTab === role.id && (
+                <motion.div
+                  layoutId="active-role-tab"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "#1A1A1A",
+                    borderRadius: "12px",
+                  }}
+                  transition={{ type: "spring", duration: 0.5 }}
+                />
+              )}
+              <span style={{ position: "relative", zIndex: 10 }}>{role.label}</span>
+            </button>
+          ))}
         </div>
 
         {/* Right: content card */}
@@ -93,11 +91,9 @@ export default function RolesSection() {
           background: "#fff",
           borderRadius: "20px",
           border: "1px solid rgba(26,26,26,0.06)",
-          padding: "48px",
-          minHeight: "520px",
+          padding: "40px",
+          minHeight: "400px",
           overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
         }}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -106,10 +102,10 @@ export default function RolesSection() {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              style={{ display: "flex", gap: "32px", flex: 1 }}
+              style={{ display: "flex", gap: "32px", height: "100%" }}
             >
               <div style={{ flex: 1 }}>
-                <h3 style={{ fontFamily: "'Signifier', Georgia, serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0" }}>
+                <h3 style={{ fontFamily: "'Signifier', Georgia, serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 20px 0" }}>
                   {activeRole.title}
                 </h3>
                 <ul style={{ listStyle: "disc", paddingLeft: "20px", margin: 0 }}>
