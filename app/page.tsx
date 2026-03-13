@@ -151,7 +151,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 </section>
 
 <!-- THE OPPORTUNITY -->
-<section style="padding-top:60px;padding-bottom:240px">
+<section style="padding-top:60px;padding-bottom:320px">
   <div class="section-max text-center">
     <h2 class="text-4xl md:text-6xl font-medium tracking-tight mb-6">Do 10x the work,<br>10x as fast, 10x as fun</h2>
     <p class="text-secondary text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
@@ -589,7 +589,7 @@ const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
 export default function Home() {
   return (
     <>
-      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 40px", borderBottom: "1px solid rgba(26,26,26,0.08)", background: "#FAFAF7", position: "sticky", top: 0, zIndex: 100 }}>
+      <nav style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", padding: "16px 40px", borderBottom: "1px solid rgba(26,26,26,0.08)", background: "#FAFAF7", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <button style={{ background: "none", border: "none", cursor: "pointer", padding: "4px" }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -599,7 +599,7 @@ export default function Home() {
           </button>
         </div>
         <img src="/img/every-logo.jpg" alt="Every" style={{ height: "24px" }} />
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px", justifySelf: "end" }}>
           <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", color: "#1A1A1A", textDecoration: "none" }}>Sign In</a>
           <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", background: "#1A1A1A", color: "white", padding: "8px 20px", borderRadius: "999px", textDecoration: "none" }}>Subscribe</a>
         </div>
