@@ -118,7 +118,6 @@ export default function RolesSection() {
             borderRadius: "20px",
             border: "1px solid rgba(26,26,26,0.06)",
             padding: "40px",
-            minHeight: "400px",
             overflow: "hidden",
           }}>
             <AnimatePresence mode="wait">
