@@ -1,5 +1,6 @@
 import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -31,10 +32,8 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
   </div><!-- close section-max -->
 
-  <!-- Slack Conversations Banner — full width -->
-  <div class="mt-16">
-    <p class="text-[#1A1A1A]/50 text-sm font-semibold uppercase tracking-wider text-center mb-6">Hand over to your +1:</p>
-
+  <!-- Slack marquee removed, now in ContainerScroll -->
+  <div class="mt-16" style="display:none">
       <div class="overflow-hidden mb-4 marquee-mask">
         <div class="marquee-track">
           <!-- Engineering -->
@@ -506,10 +505,124 @@ const AFTER_ROLES = `<!-- PRICING -->
   </div>
 </footer>`;
 
+const MARQUEE_HTML = `
+      <div class="overflow-hidden mb-4 marquee-mask">
+        <div class="marquee-track">
+          <!-- Engineering -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Engineering</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#8B6914;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/person1.jpg" class="pfp" alt=""><div><span class="slack-name">Austin</span><p class="slack-text">@Judd, users want to use Monologue for meeting notes, can you spin up an MVP and push to staging?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent1.jpg" class="pfp" alt=""><div><span class="slack-name">Judd</span><p class="slack-text">I see those requests too. Great idea. I'll spin up a plan and share before I get started.</p></div></div>
+          </div>
+          <!-- Customer Support -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Customer Support</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/intercom.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHV4MW2TEJ32MP5J69J5PP.avif" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFQCHAC77QT0J9RKDCYPNBG.webp" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/discord.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person2.jpg" class="pfp" alt=""><div><span class="slack-name">Elle</span><p class="slack-text">@Jalaiyah we're getting support emails that users are missing today's Camp Zoom link. What is it?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent2.jpg" class="pfp" alt=""><div><span class="slack-name">Jalaiyah</span><p class="slack-text">https://us02web.zoom.us/j/85340652464</p></div></div>
+            <div class="slack-msg"><img src="img/person2.jpg" class="pfp" alt=""><div><span class="slack-name">Elle</span><p class="slack-text">Got it, adding that as a temporary Intercom article. I'll handle these responses going forward.</p></div></div>
+          </div>
+          <!-- Analysis -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Analysis</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/stripe.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#5246CF;flex-shrink:0;"></div><div style="width:16px;height:16px;border-radius:4px;background:#6366F1;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/person3.jpg" class="pfp" alt=""><div><span class="slack-name">Dan</span><p class="slack-text">@Zosia, if trials continue converting at this rate and we add trailing 7-day avg subscribers through March, what will growth look like?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent3.jpg" class="pfp" alt=""><div><span class="slack-name">Zosia</span><p class="slack-text">Pulled data from Stripe and ChartMogul. Huge month, likely 22%+ MoM growth. Want me to pull consulting, sponsorship, and course revenue from Mercury too?</p></div></div>
+          </div>
+          <!-- Design -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Design</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/figma.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#2EAD33;flex-shrink:0;"></div><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJGKMBFJ92BWB3TXGTK9Z3.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person6.jpg" class="pfp" alt=""><div><span class="slack-name">Lucas</span><p class="slack-text">@Manousos we're adding a login button to Proof but have limited space in mobile. Check it out and drop suggestions into Figma.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent4.jpg" class="pfp" alt=""><div><span class="slack-name">Manousos</span><p class="slack-text">Will design a few options, I've got the page loaded and see a few ways to work this</p></div></div>
+          </div>
+          <!-- DUPLICATES -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Engineering</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#8B6914;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/person1.jpg" class="pfp" alt=""><div><span class="slack-name">Austin</span><p class="slack-text">@Judd, users want to use Monologue for meeting notes, can you spin up an MVP and push to staging?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent1.jpg" class="pfp" alt=""><div><span class="slack-name">Judd</span><p class="slack-text">I see those requests too. Great idea. I'll spin up a plan and share before I get started.</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Customer Support</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/intercom.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHV4MW2TEJ32MP5J69J5PP.avif" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFQCHAC77QT0J9RKDCYPNBG.webp" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/discord.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person2.jpg" class="pfp" alt=""><div><span class="slack-name">Elle</span><p class="slack-text">@Jalaiyah we're getting support emails that users are missing today's Camp Zoom link. What is it?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent2.jpg" class="pfp" alt=""><div><span class="slack-name">Jalaiyah</span><p class="slack-text">https://us02web.zoom.us/j/85340652464</p></div></div>
+            <div class="slack-msg"><img src="img/person2.jpg" class="pfp" alt=""><div><span class="slack-name">Elle</span><p class="slack-text">Got it, adding that as a temporary Intercom article. I'll handle these responses going forward.</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Analysis</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/stripe.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#5246CF;flex-shrink:0;"></div><div style="width:16px;height:16px;border-radius:4px;background:#6366F1;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/person3.jpg" class="pfp" alt=""><div><span class="slack-name">Dan</span><p class="slack-text">@Zosia, if trials continue converting at this rate and we add trailing 7-day avg subscribers through March, what will growth look like?</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent3.jpg" class="pfp" alt=""><div><span class="slack-name">Zosia</span><p class="slack-text">Pulled data from Stripe and ChartMogul. Huge month, likely 22%+ MoM growth. Want me to pull consulting, sponsorship, and course revenue from Mercury too?</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Design</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/figma.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#2EAD33;flex-shrink:0;"></div><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJGKMBFJ92BWB3TXGTK9Z3.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person6.jpg" class="pfp" alt=""><div><span class="slack-name">Lucas</span><p class="slack-text">@Manousos we're adding a login button to Proof but have limited space in mobile. Check it out and drop suggestions into Figma.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent4.jpg" class="pfp" alt=""><div><span class="slack-name">Manousos</span><p class="slack-text">Will design a few options, I've got the page loaded and see a few ways to work this</p></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden marquee-mask">
+        <div class="marquee-track-reverse">
+          <!-- Marketing Copy -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Marketing Copy</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJR7JDVC687V1BX69S1WT5.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/github.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/notion.so/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFK820X1M5VNFZFNA5DR4GS.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person4.jpg" class="pfp" alt=""><div><span class="slack-name">Anukshi</span><p class="slack-text">@Iris, we're launching a new Sparkle feature tomorrow. Check the latest PR in Github and run our feature launch workflow.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent5.jpg" class="pfp" alt=""><div><span class="slack-name">Iris</span><p class="slack-text">On it, spun up the launch tracker in Notion and dropped in Google Docs with the copy. Used the Spiral style for Sparkle.</p></div></div>
+          </div>
+          <!-- Operations -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Operations</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/discord.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJGKMBFJ92BWB3TXGTK9Z3.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person5.jpg" class="pfp" alt=""><div><span class="slack-name">Brandon</span><p class="slack-text">@Zosia we're migrating from Discord to Slack. I just gave you full access. Write up a plan to manage the transition</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent3.jpg" class="pfp" alt=""><div><span class="slack-name">Zosia</span><p class="slack-text">On it</p></div></div>
+          </div>
+          <!-- Sales -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Sales</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/salesforce.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#5951FF;flex-shrink:0;"></div><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFQDXMYZPG9W7J70M4FYT1C.webp" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/agent6.jpg" class="pfp" alt=""><div><span class="slack-name">Alfredo</span><p class="slack-text">@sales new inbound looks really good. 100+ person co, high intent, recently raised a round. Want me to follow up?</p></div></div>
+            <div class="slack-msg"><img src="img/person7.jpg" class="pfp" alt=""><div><span class="slack-name">Julik</span><p class="slack-text">Yeah go for it.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent6.jpg" class="pfp" alt=""><div><span class="slack-name">Alfredo</span><p class="slack-text">On it. I want to bang the gong if we close this one</p></div></div>
+          </div>
+          <!-- Product -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Product</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/notion.so/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#10A37F;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/agent7.jpg" class="pfp" alt=""><div><span class="slack-name">Milo</span><p class="slack-text">@here new feedback for Para just came in. Users want more lax permissions on sharing answers in trusted channels. Added it to Notion tracker and submitted a PR.</p></div></div>
+            <div class="slack-msg"><img src="img/person8.jpg" class="pfp" alt=""><div><span class="slack-name">Paridhi</span><p class="slack-text">Milo DM me with details, I have thoughts on this solution.</p></div></div>
+          </div>
+          <!-- DUPLICATES -->
+          <div class="slack-card">
+            <div class="cat-label"><span>Marketing Copy</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJR7JDVC687V1BX69S1WT5.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/github.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/notion.so/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFK820X1M5VNFZFNA5DR4GS.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person4.jpg" class="pfp" alt=""><div><span class="slack-name">Anukshi</span><p class="slack-text">@Iris, we're launching a new Sparkle feature tomorrow. Check the latest PR in Github and run our feature launch workflow.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent5.jpg" class="pfp" alt=""><div><span class="slack-name">Iris</span><p class="slack-text">On it, spun up the launch tracker in Notion and dropped in Google Docs with the copy. Used the Spiral style for Sparkle.</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Operations</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/discord.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFJGKMBFJ92BWB3TXGTK9Z3.png" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/person5.jpg" class="pfp" alt=""><div><span class="slack-name">Brandon</span><p class="slack-text">@Zosia we're migrating from Discord to Slack. I just gave you full access. Write up a plan to manage the transition</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent3.jpg" class="pfp" alt=""><div><span class="slack-name">Zosia</span><p class="slack-text">On it</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Sales</span><div class="cat-icons"><img src="https://cdn.brandfetch.io/salesforce.com/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#5951FF;flex-shrink:0;"></div><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFQDXMYZPG9W7J70M4FYT1C.webp" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"></div></div>
+            <div class="slack-msg"><img src="img/agent6.jpg" class="pfp" alt=""><div><span class="slack-name">Alfredo</span><p class="slack-text">@sales new inbound looks really good. 100+ person co, high intent, recently raised a round. Want me to follow up?</p></div></div>
+            <div class="slack-msg"><img src="img/person7.jpg" class="pfp" alt=""><div><span class="slack-name">Julik</span><p class="slack-text">Yeah go for it.</p></div></div>
+            <div class="slack-msg slack-agent"><img src="img/agent6.jpg" class="pfp" alt=""><div><span class="slack-name">Alfredo</span><p class="slack-text">On it. I want to bang the gong if we close this one</p></div></div>
+          </div>
+          <div class="slack-card">
+            <div class="cat-label"><span>Product</span><div class="cat-icons"><img src="https://workers.paper.design/file-assets/01KJWTVVB5NR6MA9X3Z6H24G5K/01KKFHEABEWZ2B6M8DFCAGH12Y.jpg" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><img src="https://cdn.brandfetch.io/notion.so/icon/default" style="width:16px;height:16px;border-radius:4px;object-fit:cover;"><div style="width:16px;height:16px;border-radius:4px;background:#10A37F;flex-shrink:0;"></div></div></div>
+            <div class="slack-msg"><img src="img/agent7.jpg" class="pfp" alt=""><div><span class="slack-name">Milo</span><p class="slack-text">@here new feedback for Para just came in. Users want more lax permissions on sharing answers in trusted channels. Added it to Notion tracker and submitted a PR.</p></div></div>
+            <div class="slack-msg"><img src="img/person8.jpg" class="pfp" alt=""><div><span class="slack-name">Paridhi</span><p class="slack-text">Milo DM me with details, I have thoughts on this solution.</p></div></div>
+          </div>
+        </div>
+      </div>
+`;
+
 export default function Home() {
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: BEFORE_BENTO }} />
+
+      <ContainerScroll
+        titleComponent={
+          <p className="text-[#1A1A1A]/50 text-sm font-semibold uppercase tracking-wider text-center mb-6">Hand over to your +1:</p>
+        }
+      >
+        <div dangerouslySetInnerHTML={{ __html: MARQUEE_HTML }} />
+      </ContainerScroll>
 
       <section style={{ padding: "140px 64px" }}>
         <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px", textAlign: "center" }}>
