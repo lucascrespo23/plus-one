@@ -34,25 +34,42 @@ export function HeroTypewriter() {
 
   if (!portalTarget) return null;
 
+  const gradientStyle: React.CSSProperties = {
+    background: "linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3)",
+    backgroundSize: "400% 100%",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    animation: "gradient-scroll 6s linear infinite",
+  };
+
   return createPortal(
-    <h1 className="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight text-center">
-      {displayText.endsWith("+1") ? (
-        <>
-          {displayText.slice(0, -2)}
-          <span className="gradient-animate">+1</span>
-        </>
-      ) : displayText.endsWith("+") ? (
-        <>
-          {displayText.slice(0, -1)}
-          <span className="gradient-animate">+</span>
-        </>
-      ) : (
-        displayText
-      )}
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes gradient-scroll {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 400% 50%; }
+        }
+      `}} />
+      <h1 className="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight text-center">
+        {displayText.endsWith("+1") ? (
+          <>
+            {displayText.slice(0, -2)}
+            <span style={gradientStyle}>+1</span>
+          </>
+        ) : displayText.endsWith("+") ? (
+          <>
+            {displayText.slice(0, -1)}
+            <span style={gradientStyle}>+</span>
+          </>
+        ) : (
+          displayText
+        )}
       {!done && (
         <span style={{ opacity: 0.4, animation: "pulse 1s infinite" }}>|</span>
       )}
-    </h1>,
+      </h1>
+    </>,
     portalTarget
   );
 }
