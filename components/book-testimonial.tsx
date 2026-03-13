@@ -78,18 +78,30 @@ const testimonials = [
   },
 ];
 
+// currentPage: -1 = cover, 0..5 = testimonial pages
+const COVER = -1;
+const TOTAL_PAGES = testimonials.length; // 6
+
 export default function BookTestimonial() {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(COVER);
   const [direction, setDirection] = useState(0);
 
   const paginate = (newDirection: number) => {
     const next = currentPage + newDirection;
-    if (next < 0 || next >= testimonials.length) return;
+    if (next < COVER || next >= TOTAL_PAGES) return;
     setDirection(newDirection);
     setCurrentPage(next);
   };
 
-  const t = testimonials[currentPage];
+  const goTo = (page: number) => {
+    if (page < COVER || page >= TOTAL_PAGES) return;
+    setDirection(page > currentPage ? 1 : -1);
+    setCurrentPage(page);
+  };
+
+  const isCover = currentPage === COVER;
+  const isFirst = currentPage === COVER;
+  const isLast = currentPage === TOTAL_PAGES - 1;
 
   const variants = {
     enter: (dir: number) => ({
@@ -149,116 +161,174 @@ export default function BookTestimonial() {
                 exit="exit"
                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 style={{
-                  background: "#FFFFFF",
                   borderRadius: 20,
-                  border: "1px solid rgba(26,26,26,0.06)",
+                  overflow: "hidden",
                   boxShadow:
-                    "0 4px 24px rgba(0,0,0,0.06), 0 12px 48px rgba(0,0,0,0.04), -4px 0 12px rgba(0,0,0,0.02)",
-                  padding: "48px 40px",
+                    "0 4px 24px rgba(0,0,0,0.08), 0 12px 48px rgba(0,0,0,0.06), -4px 0 12px rgba(0,0,0,0.03)",
                   transformStyle: "preserve-3d",
                   backfaceVisibility: "hidden",
+                  cursor: isCover ? "pointer" : undefined,
+                  ...(isCover
+                    ? {}
+                    : {
+                        background: "#FFFFFF",
+                        border: "1px solid rgba(26,26,26,0.06)",
+                        padding: "48px 40px",
+                      }),
                 }}
+                onClick={isCover ? () => paginate(1) : undefined}
               >
-                {/* Agent profile - front */}
-                <div style={{ marginBottom: 32 }}>
-                  <img
-                    src={t.img}
-                    alt={t.name}
-                    style={{
-                      width: 96,
-                      height: 96,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      marginBottom: 16,
-                      border: "3px solid #F3F2EE",
-                    }}
-                  />
-                  <h3
-                    style={{
-                      fontFamily: "'Signifier', Georgia, serif",
-                      fontSize: 28,
-                      fontWeight: 400,
-                      color: "#1A1A1A",
-                      margin: "0 0 8px 0",
-                    }}
-                  >
-                    {t.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: "'Switzer', system-ui, sans-serif",
-                      fontSize: 15,
-                      color: "rgba(26,26,26,0.6)",
-                      margin: "0 0 4px 0",
-                    }}
-                  >
-                    Reports to <strong style={{ color: "#1A1A1A" }}>{t.reportsTo}</strong>, {t.role}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "'Switzer', system-ui, sans-serif",
-                      fontSize: 13,
-                      color: "rgba(26,26,26,0.4)",
-                      margin: 0,
-                    }}
-                  >
-                    Works with {t.worksWith}
-                  </p>
-                </div>
-
-                {/* Divider */}
-                <div
-                  style={{
-                    height: 1,
-                    background: "rgba(26,26,26,0.06)",
-                    margin: "0 -8px 28px -8px",
-                  }}
-                />
-
-                {/* Testimonial - back */}
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "'Signifier', Georgia, serif",
-                      fontSize: 19,
-                      lineHeight: 1.6,
-                      color: "#1A1A1A",
-                      fontStyle: "italic",
-                      margin: "0 0 24px 0",
-                    }}
-                  >
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 12,
-                      justifyContent: "center",
-                    }}
-                  >
+                {isCover ? (
+                  /* ——— COVER PAGE ——— */
+                  <div style={{ position: "relative" }}>
                     <img
-                      src={t.managerImg}
-                      alt={t.managerName}
+                      src="img/passport-cover.jpg"
+                      alt="Plus One Passport"
                       style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: "50%",
+                        width: "100%",
+                        display: "block",
                         objectFit: "cover",
+                        aspectRatio: "3 / 4",
                       }}
                     />
-                    <span
+                    {/* "Open" hint */}
+                    <div
                       style={{
-                        fontFamily: "'Switzer', system-ui, sans-serif",
-                        fontSize: 14,
-                        fontWeight: 600,
-                        color: "#1A1A1A",
+                        position: "absolute",
+                        bottom: 24,
+                        left: 0,
+                        right: 0,
+                        textAlign: "center",
                       }}
                     >
-                      {t.managerName}, {t.managerRole}
-                    </span>
+                      <span
+                        style={{
+                          fontFamily: "'Switzer', system-ui, sans-serif",
+                          fontSize: 13,
+                          color: "rgba(255,255,255,0.7)",
+                          background: "rgba(0,0,0,0.25)",
+                          backdropFilter: "blur(4px)",
+                          padding: "6px 16px",
+                          borderRadius: 20,
+                          letterSpacing: "0.04em",
+                        }}
+                      >
+                        Click to open →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  /* ——— TESTIMONIAL PAGES ——— */
+                  (() => {
+                    const t = testimonials[currentPage];
+                    return (
+                      <>
+                        {/* Agent profile */}
+                        <div style={{ marginBottom: 32 }}>
+                          <img
+                            src={t.img}
+                            alt={t.name}
+                            style={{
+                              width: 96,
+                              height: 96,
+                              borderRadius: "50%",
+                              objectFit: "cover",
+                              marginBottom: 16,
+                              border: "3px solid #F3F2EE",
+                            }}
+                          />
+                          <h3
+                            style={{
+                              fontFamily: "'Signifier', Georgia, serif",
+                              fontSize: 28,
+                              fontWeight: 400,
+                              color: "#1A1A1A",
+                              margin: "0 0 8px 0",
+                            }}
+                          >
+                            {t.name}
+                          </h3>
+                          <p
+                            style={{
+                              fontFamily: "'Switzer', system-ui, sans-serif",
+                              fontSize: 15,
+                              color: "rgba(26,26,26,0.6)",
+                              margin: "0 0 4px 0",
+                            }}
+                          >
+                            Reports to{" "}
+                            <strong style={{ color: "#1A1A1A" }}>{t.reportsTo}</strong>,{" "}
+                            {t.role}
+                          </p>
+                          <p
+                            style={{
+                              fontFamily: "'Switzer', system-ui, sans-serif",
+                              fontSize: 13,
+                              color: "rgba(26,26,26,0.4)",
+                              margin: 0,
+                            }}
+                          >
+                            Works with {t.worksWith}
+                          </p>
+                        </div>
+
+                        {/* Divider */}
+                        <div
+                          style={{
+                            height: 1,
+                            background: "rgba(26,26,26,0.06)",
+                            margin: "0 -8px 28px -8px",
+                          }}
+                        />
+
+                        {/* Testimonial */}
+                        <div>
+                          <p
+                            style={{
+                              fontFamily: "'Signifier', Georgia, serif",
+                              fontSize: 19,
+                              lineHeight: 1.6,
+                              color: "#1A1A1A",
+                              fontStyle: "italic",
+                              margin: "0 0 24px 0",
+                            }}
+                          >
+                            &ldquo;{t.quote}&rdquo;
+                          </p>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 12,
+                              justifyContent: "center",
+                            }}
+                          >
+                            <img
+                              src={t.managerImg}
+                              alt={t.managerName}
+                              style={{
+                                width: 36,
+                                height: 36,
+                                borderRadius: "50%",
+                                objectFit: "cover",
+                              }}
+                            />
+                            <span
+                              style={{
+                                fontFamily: "'Switzer', system-ui, sans-serif",
+                                fontSize: 14,
+                                fontWeight: 600,
+                                color: "#1A1A1A",
+                              }}
+                            >
+                              {t.managerName}, {t.managerRole}
+                            </span>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })()
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -275,15 +345,15 @@ export default function BookTestimonial() {
         >
           <button
             onClick={() => paginate(-1)}
-            disabled={currentPage === 0}
+            disabled={isFirst}
             style={{
               background: "none",
               border: "1px solid rgba(26,26,26,0.12)",
               borderRadius: "50%",
               width: 40,
               height: 40,
-              cursor: currentPage === 0 ? "default" : "pointer",
-              opacity: currentPage === 0 ? 0.3 : 1,
+              cursor: isFirst ? "default" : "pointer",
+              opacity: isFirst ? 0.3 : 1,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -295,14 +365,26 @@ export default function BookTestimonial() {
             </svg>
           </button>
 
-          <div style={{ display: "flex", gap: 8 }}>
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            {/* Cover dot */}
+            <button
+              onClick={() => goTo(COVER)}
+              style={{
+                width: currentPage === COVER ? 24 : 8,
+                height: 8,
+                borderRadius: 4,
+                background: currentPage === COVER ? "#1A1A1A" : "rgba(26,26,26,0.15)",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                padding: 0,
+              }}
+            />
+            {/* Testimonial dots */}
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => {
-                  setDirection(i > currentPage ? 1 : -1);
-                  setCurrentPage(i);
-                }}
+                onClick={() => goTo(i)}
                 style={{
                   width: i === currentPage ? 24 : 8,
                   height: 8,
@@ -319,15 +401,15 @@ export default function BookTestimonial() {
 
           <button
             onClick={() => paginate(1)}
-            disabled={currentPage === testimonials.length - 1}
+            disabled={isLast}
             style={{
               background: "none",
               border: "1px solid rgba(26,26,26,0.12)",
               borderRadius: "50%",
               width: 40,
               height: 40,
-              cursor: currentPage === testimonials.length - 1 ? "default" : "pointer",
-              opacity: currentPage === testimonials.length - 1 ? 0.3 : 1,
+              cursor: isLast ? "default" : "pointer",
+              opacity: isLast ? 0.3 : 1,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
