@@ -3,6 +3,7 @@
 import React, { useRef, useCallback, useEffect, useState } from 'react'
 // @ts-ignore
 import HTMLFlipBook from 'react-pageflip'
+import { translations } from '@/lib/translations'
 
 const agents = [
   {
@@ -73,7 +74,11 @@ const agents = [
   },
 ]
 
-export default function BookTestimonial() {
+interface BookTestimonialProps {
+  lang: 'es' | 'en';
+}
+
+export default function BookTestimonial({ lang }: BookTestimonialProps) {
   const book = useRef<any>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const hasFlipped = useRef(false)
@@ -148,7 +153,7 @@ export default function BookTestimonial() {
               fontSize: isMobile ? '2rem' : '3rem',
             }}
           >
-            Every human deserves a Plus One
+            {translations[lang].passportTitle}
           </h2>
         </div>
 
