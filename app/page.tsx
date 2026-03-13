@@ -1,5 +1,5 @@
 import Bucket from "@/components/ui/bucket";
-import RolesTabs from "@/components/roles-tabs";
+import RolesSection from "@/components/roles-section";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -523,7 +523,7 @@ export default function Home() {
         </div>
       </section>
 
-      <RolesTabs />
+      <RolesSection />
 
       <div dangerouslySetInnerHTML={{ __html: AFTER_ROLES }} />
     </>
