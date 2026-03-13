@@ -158,3 +158,14 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item:last-child {
   background: #1a1f3d !important;
 }
+/* Dashed divider between spread pages — on left-side pages (even, not cover/back) */
+.stf__item--left:not(:first-child):not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: 0;
+  border-right: 1px dashed #ccc;
+  z-index: 10;
+  pointer-events: none;
+}

@@ -259,15 +259,6 @@ export default function BookTestimonial() {
                   {i * 2 + 1}
                 </div>
                 </div>
-                {/* Dashed divider on right edge */}
-                <div style={{
-                  position: 'absolute',
-                  top: '10%',
-                  bottom: '10%',
-                  right: 0,
-                  width: 0,
-                  borderRight: '1px dashed #ccc',
-                }} />
               </div>,
 
               /* Testimonial page (odd after cover — RIGHT side) */
