@@ -595,13 +595,13 @@ export default function Home() {
     <>
       <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
+      <div style={{ marginTop: "-200px" }}>
       <ContainerScroll
-        titleComponent={
-          <p className="text-[#1A1A1A]/50 text-sm font-semibold uppercase tracking-wider text-center mb-6">Hand over to your +1:</p>
-        }
+        titleComponent={<></>}
       >
         <div dangerouslySetInnerHTML={{ __html: MARQUEE_HTML }} />
       </ContainerScroll>
+      </div>
 
       <div dangerouslySetInnerHTML={{ __html: REST_BEFORE_BENTO }} />
 
