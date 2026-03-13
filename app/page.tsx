@@ -600,7 +600,7 @@ export default function Home() {
       </ContainerScroll>
       </div>
 
-      <div dangerouslySetInnerHTML={{ __html: REST_BEFORE_BENTO }} />
+      <div style={{ marginTop: "-100px" }} dangerouslySetInnerHTML={{ __html: REST_BEFORE_BENTO }} />
 
       <section style={{ padding: "140px 64px" }}>
         <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px", textAlign: "center" }}>
