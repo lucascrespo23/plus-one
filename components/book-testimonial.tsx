@@ -395,46 +395,46 @@ export default function BookTestimonial() {
               </p>
             </div>
           </HTMLFlipBook>
-          {/* Arrow controls */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 20 }}>
-            <button
-              onClick={() => book.current?.pageFlip()?.flipPrev()}
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                padding: 8,
-                color: '#999',
-                fontSize: 20,
-                lineHeight: 1,
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
-              aria-label="Previous page"
-            >
-              ←
-            </button>
-            <button
-              onClick={() => book.current?.pageFlip()?.flipNext()}
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                padding: 8,
-                color: '#999',
-                fontSize: 20,
-                lineHeight: 1,
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
-              aria-label="Next page"
-            >
-              →
-            </button>
-          </div>
         </div>
+      </div>
+      {/* Arrow controls — centered below the book */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, marginTop: 24 }}>
+        <button
+          onClick={() => book.current?.pageFlip()?.flipPrev()}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 8,
+            color: '#999',
+            fontSize: 20,
+            lineHeight: 1,
+            transition: 'color 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+          aria-label="Previous page"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => book.current?.pageFlip()?.flipNext()}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 8,
+            color: '#999',
+            fontSize: 20,
+            lineHeight: 1,
+            transition: 'color 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+          aria-label="Next page"
+        >
+          →
+        </button>
       </div>
     </section>
   )
