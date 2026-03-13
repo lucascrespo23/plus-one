@@ -67,8 +67,7 @@ h3,h4 { font-family: 'Signifier', Georgia, serif; }
 .pfp { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .pfp-lg { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 
-.slack-card { background: #fff; border: 1px solid #EEE; border-radius: 12px; padding: 16px 20px; min-width: 450px; max-width: 520px; flex-shrink: 0; transition: all 0.2s ease; }
-.slack-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.slack-card { background: #fff; border: 1px solid #EEE; border-radius: 12px; padding: 16px 20px; min-width: 450px; max-width: 520px; flex-shrink: 0;  }
 .slack-msg { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
 .slack-msg:last-child { margin-bottom: 0; }
 .slack-name { font-weight: 600; font-size: 13px; color: #1A1A1A; }
