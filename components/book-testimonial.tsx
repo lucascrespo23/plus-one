@@ -125,15 +125,15 @@ export default function BookTestimonial() {
         }}
       >
         {/* Left: Heading */}
-        <div style={{ flex: '0 0 38%', paddingLeft: 0 }}>
+        <div style={{ flex: '0 0 44%', paddingLeft: 0 }}>
           <h2
-            className="text-4xl md:text-5xl font-light tracking-tight"
+            className="font-light tracking-tight"
             style={{
               fontFamily: 'var(--font-signifier, Georgia, serif)',
               textAlign: 'left',
-              lineHeight: 1.15,
+              lineHeight: 1.12,
               margin: 0,
-              fontSize: 'clamp(2.25rem, 3.2vw, 3.2rem)',
+              fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)',
             }}
           >
             Every human deserves a Plus One
