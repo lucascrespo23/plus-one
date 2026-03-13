@@ -43,7 +43,7 @@ export default function RolesSection() {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Left 50%: headline + subhead, sticky */}
-        <div style={{ width: "50%", flexShrink: 0, position: "sticky", top: "80px", paddingRight: "32px" }}>
+        <div style={{ width: "50%", flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", paddingRight: "32px" }}>
           <h2 style={{
             margin: 0,
             color: "#1A1A1A",
