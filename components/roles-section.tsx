@@ -37,89 +37,108 @@ export default function RolesSection() {
 
   return (
     <section style={{ background: "#F3F2EE", padding: "100px 64px" }}>
-      <div style={{ display: "flex", gap: "32px", alignItems: "flex-start" }}
+      <div
+        style={{ display: "flex", gap: "64px", alignItems: "flex-start" }}
         onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => { setIsPaused(false); }}
+        onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Left: headline + subhead + vertical tabs */}
-        <div style={{ width: "300px", flexShrink: 0, position: "sticky", top: "32px", display: "flex", flexDirection: "column" }}>
-          <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px" }}>
+        {/* Left 50%: headline + subhead, sticky */}
+        <div style={{ width: "50%", flexShrink: 0, position: "sticky", top: "80px", paddingRight: "32px" }}>
+          <h2 style={{
+            margin: 0,
+            color: "#1A1A1A",
+            fontFamily: "'Signifier', Georgia, serif",
+            fontSize: "48px",
+            fontWeight: 400,
+            letterSpacing: "-0.03em",
+            lineHeight: "1.15",
+          }}>
             A +1 for every style of work
           </h2>
-          <p style={{ color: "rgba(26,26,26,0.5)", fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", marginTop: "12px", marginBottom: "32px" }}>
+          <p style={{
+            color: "rgba(26,26,26,0.5)",
+            fontFamily: "'Switzer', system-ui, sans-serif",
+            fontSize: "20px",
+            marginTop: "20px",
+            lineHeight: "1.5",
+          }}>
             No matter who you are and what you do, a +1 will help.
           </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-          {ROLES.map(role => (
-            <button
-              key={role.id}
-              onClick={() => { setActiveTab(role.id); setIsPaused(true); setTimeout(() => setIsPaused(false), 6000); }}
-              style={{
-                position: "relative",
-                textAlign: "left",
-                padding: "12px 20px",
-                borderRadius: "12px",
-                fontSize: "14px",
-                fontFamily: "'Switzer', system-ui, sans-serif",
-                cursor: "pointer",
-                border: "none",
-                background: activeTab === role.id ? "#1A1A1A" : "transparent",
-                color: activeTab === role.id ? "#fff" : "#666",
-                transition: "background 0.2s, color 0.2s",
-              }}
-            >
-              {activeTab === role.id && (
-                <motion.div
-                  layoutId="active-role-tab"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "#1A1A1A",
-                    borderRadius: "12px",
-                  }}
-                  transition={{ type: "spring", duration: 0.5 }}
-                />
-              )}
-              <span style={{ position: "relative", zIndex: 10 }}>{role.label}</span>
-            </button>
-          ))}
-          </div>
         </div>
 
-        {/* Right: content card */}
-        <div style={{
-          flex: 1,
-          background: "#fff",
-          borderRadius: "20px",
-          border: "1px solid rgba(26,26,26,0.06)",
-          padding: "40px",
-          minHeight: "400px",
-          overflow: "hidden",
-        }}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              style={{ display: "flex", gap: "32px", height: "100%" }}
-            >
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontFamily: "'Signifier', Georgia, serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 20px 0" }}>
-                  {activeRole.title}
-                </h3>
-                <ul style={{ listStyle: "disc", paddingLeft: "20px", margin: 0 }}>
-                  {activeRole.bullets.map((b, i) => (
-                    <li key={i} style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "16px", color: "#666", lineHeight: "2", listStyleType: "'•  '" }}>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div style={{ width: "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: "280px" }} />
-            </motion.div>
-          </AnimatePresence>
+        {/* Right 50%: horizontal tabs + content card */}
+        <div style={{ width: "50%", display: "flex", flexDirection: "column", gap: "16px" }}>
+          {/* Horizontal pill tabs */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+            {ROLES.map(role => (
+              <button
+                key={role.id}
+                onClick={() => { setActiveTab(role.id); setIsPaused(true); setTimeout(() => setIsPaused(false), 6000); }}
+                style={{
+                  position: "relative",
+                  padding: "8px 18px",
+                  borderRadius: "999px",
+                  fontSize: "14px",
+                  fontFamily: "'Switzer', system-ui, sans-serif",
+                  cursor: "pointer",
+                  border: "none",
+                  background: "transparent",
+                  color: activeTab === role.id ? "#fff" : "#666",
+                  transition: "color 0.2s",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {activeTab === role.id && (
+                  <motion.div
+                    layoutId="active-role-tab"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "#1A1A1A",
+                      borderRadius: "999px",
+                    }}
+                    transition={{ type: "spring", duration: 0.5 }}
+                  />
+                )}
+                <span style={{ position: "relative", zIndex: 10 }}>{role.label}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Content card */}
+          <div style={{
+            background: "#fff",
+            borderRadius: "20px",
+            border: "1px solid rgba(26,26,26,0.06)",
+            padding: "40px",
+            minHeight: "400px",
+            overflow: "hidden",
+          }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ display: "flex", gap: "32px", height: "100%" }}
+              >
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontFamily: "'Signifier', Georgia, serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 20px 0" }}>
+                    {activeRole.title}
+                  </h3>
+                  <ul style={{ listStyle: "disc", paddingLeft: "20px", margin: 0 }}>
+                    {activeRole.bullets.map((b, i) => (
+                      <li key={i} style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "16px", color: "#666", lineHeight: "2", listStyleType: "'•  '" }}>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{ width: "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: "280px" }} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
