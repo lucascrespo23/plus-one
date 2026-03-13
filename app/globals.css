@@ -165,4 +165,7 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item.--right {
   box-shadow: inset 20px 0 20px -12px rgba(0,0,0,0.12);
 }
+.stf__parent {
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.12));
+}
 /* cache-bust-v3 */
