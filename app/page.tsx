@@ -1,6 +1,7 @@
 import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { HeroTypewriter } from "@/components/ui/hero-typewriter";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -18,8 +19,8 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
       <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:416px; width:52%; margin:0 auto; display:block;">
     </div>
 
-    <h1 class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
-      Promote yourself<br>with a <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">+1</span>
+    <h1 id="hero-headline" class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
+      Promote yourself with a <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">+1</span>
     </h1>
 
     <p class="text-[#1A1A1A]/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -593,6 +594,7 @@ const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
 export default function Home() {
   return (
     <>
+      <HeroTypewriter />
       <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
       <div style={{ marginTop: "-200px" }}>
