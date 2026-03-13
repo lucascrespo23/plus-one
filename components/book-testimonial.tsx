@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useCallback, useEffect } from 'react'
+import React, { useRef, useCallback, useEffect, useState } from 'react'
 // @ts-ignore
 import HTMLFlipBook from 'react-pageflip'
 
@@ -77,6 +77,8 @@ export default function BookTestimonial() {
   const book = useRef<any>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const hasFlipped = useRef(false)
+  const [currentPage, setCurrentPage] = useState(0)
+  const totalPages = 14 // 6 agents × 2 pages + 1 cover + 1 back cover
 
   const flipTo = useCallback((page: number) => {
     book.current?.pageFlip()?.flip(page)
@@ -168,6 +170,7 @@ export default function BookTestimonial() {
             swipeDistance={30}
             showPageCorners={true}
             disableFlipByClick={false}
+            onFlip={(e: any) => setCurrentPage(e.data)}
           >
             {/* COVER (page 0) */}
             <div
@@ -394,6 +397,7 @@ export default function BookTestimonial() {
             lineHeight: 1,
             transition: 'color 0.2s',
             pointerEvents: 'auto',
+            visibility: currentPage === 0 ? 'hidden' : 'visible',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
           onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
@@ -413,6 +417,7 @@ export default function BookTestimonial() {
             lineHeight: 1,
             transition: 'color 0.2s',
             pointerEvents: 'auto',
+            visibility: currentPage >= totalPages - 2 ? 'hidden' : 'visible',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
           onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
