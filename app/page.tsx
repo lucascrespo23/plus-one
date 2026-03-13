@@ -597,7 +597,7 @@ export default function Home() {
       <HeroTypewriter />
       <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
-      <div style={{ marginTop: "-200px" }}>
+      <div style={{ marginTop: "-400px" }}>
       <ContainerScroll
         titleComponent={<></>}
       >
