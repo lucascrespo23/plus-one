@@ -91,17 +91,16 @@ h3,h4 { font-family: 'Signifier', Georgia, serif; }
 
 @keyframes gradient-shift {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
 .gradient-animate {
-  background: linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3) !important;
-  background-size: 200% 100% !important;
+  background: linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3) !important;
+  background-size: 400% 100% !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
-  animation: gradient-shift 3s ease infinite !important;
+  animation: gradient-shift 6s linear infinite !important;
 }
 
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
