@@ -15,7 +15,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
     <!-- Hero Image -->
     <div class="mb-8" style="text-align:center;">
-      <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:640px; width:80%; margin:0 auto; display:block;">
+      <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:416px; width:52%; margin:0 auto; display:block;">
     </div>
 
     <h1 class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
