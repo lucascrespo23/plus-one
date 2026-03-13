@@ -172,8 +172,8 @@ export default function BookTestimonial() {
               top: '50%',
               transform: 'translateY(-50%)',
               width: 200,
-              opacity: currentPage >= totalPages - 2 ? 0.85 : 0,
-              visibility: currentPage >= totalPages - 2 ? 'visible' : 'hidden',
+              opacity: currentPage >= totalPages - 1 ? 0.85 : 0,
+              visibility: currentPage >= totalPages - 1 ? 'visible' : 'hidden',
               zIndex: 10,
               pointerEvents: 'none',
             }}
