@@ -45,7 +45,7 @@ export default function RolesSection() {
   return (
     <section style={{ background: "#F3F2EE", padding: "100px 120px" }}>
       <div
-        style={{ display: "flex", gap: "36px", alignItems: "flex-start" }}
+        style={{ display: "flex", gap: "36px", alignItems: "stretch" }}
         onMouseEnter={() => { setIsPaused(true); if (resumeTimer.current) clearTimeout(resumeTimer.current); }}
         onMouseLeave={() => { resumeTimer.current = setTimeout(() => setIsPaused(false), 6000); }}
       >
