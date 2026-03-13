@@ -78,7 +78,7 @@ export default function BookTestimonial() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const hasFlipped = useRef(false)
   const [currentPage, setCurrentPage] = useState(0)
-  const totalPages = 14
+  const totalPages = 15
 
   const flipTo = useCallback((page: number) => {
     book.current?.pageFlip()?.flip(page)
@@ -377,23 +377,20 @@ export default function BookTestimonial() {
                 every.to
               </p>
             </div>
+            {/* STAMP PAGE (transparent, behind back cover) */}
+            <div
+              style={{
+                background: 'transparent',
+                width: 340,
+                height: 480,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <img src="/img/made-by-every.jpg" style={{ width: 200, opacity: 0.9 }} />
+            </div>
           </HTMLFlipBook>
-          {/* Made by Every stamp — fades in on back cover */}
-          <img
-            src="/img/made-by-every.jpg"
-            alt="Made by Every"
-            style={{
-              position: 'absolute',
-              right: 0,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: 200,
-              opacity: currentPage >= totalPages - 2 ? 0.85 : 0,
-              zIndex: 50,
-              pointerEvents: 'none',
-              transition: 'opacity 0.6s ease',
-            }}
-          />
 
           {/* Arrow controls — below the book */}
           <div
