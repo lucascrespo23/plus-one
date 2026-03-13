@@ -254,14 +254,6 @@ export default function BookTestimonial() {
                   Works with {agent.worksWith}
                 </p>
 
-                {/* Page number */}
-                <div style={{ fontSize: 11, color: '#ccc', marginTop: 'auto', textAlign: 'right' }}>
-                  {i * 2 + 1}
-                </div>
-                </div>
-              </div>,
-
-              /* Testimonial page (odd after cover — RIGHT side) */
               <div
                 key={`${agent.name}-testimonial`}
                 style={{
@@ -358,18 +350,10 @@ export default function BookTestimonial() {
                   </div>
                 </div>
 
-                {/* Page number */}
-                <div style={{ fontSize: 11, color: '#ccc', textAlign: 'left', marginTop: 'auto' }}>
-                  {i * 2 + 2}
-                </div>
                 </div>
               </div>,
             ])}
 
-            {/* BACK COVER */}
-            <div
-              style={{
-                background: '#1a1f3d',
                 width: 340,
                 height: 480,
                 display: 'flex',
