@@ -115,25 +115,25 @@ export default function BookTestimonial() {
         style={{
           background: 'transparent',
           borderRadius: 16,
-          padding: '56px 80px',
+          padding: '56px 40px',
           width: '100%',
-          maxWidth: 1200,
+          maxWidth: 1400,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 48,
+          gap: 80,
         }}
       >
         {/* Left: Heading */}
-        <div style={{ flex: '0 0 44%', paddingLeft: 0 }}>
+        <div style={{ flex: '1 1 auto', maxWidth: 420 }}>
           <h2
             className="font-light tracking-tight"
             style={{
               fontFamily: 'var(--font-signifier, Georgia, serif)',
               textAlign: 'left',
-              lineHeight: 1.12,
+              lineHeight: 1.1,
               margin: 0,
-              fontSize: 'clamp(2.5rem, 3.5vw, 3.5rem)',
+              fontSize: '3rem',
             }}
           >
             Every human deserves a Plus One
@@ -150,11 +150,11 @@ export default function BookTestimonial() {
             showCover={true}
             drawShadow={true}
             flippingTime={800}
-            usePortrait={true}
+            usePortrait={false}
             startPage={0}
             size="fixed"
             minWidth={300}
-            maxWidth={400}
+            maxWidth={680}
             minHeight={420}
             maxHeight={540}
             maxShadowOpacity={0.3}
@@ -200,7 +200,7 @@ export default function BookTestimonial() {
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '40px 36px',
+                  padding: '48px 40px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -268,7 +268,7 @@ export default function BookTestimonial() {
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '40px 36px',
+                  padding: '48px 40px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
