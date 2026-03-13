@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/DesktopFonts/Signifier-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/DesktopFonts/Signifier-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/DesktopFonts/Signifier-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+body {
+  background: #FAFAF7;
+  font-family: 'Switzer', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Original landing page styles ===== */
+.feature-pill{flex:0 0 calc(20% - 10px) !important;min-width:0 !important;max-width:none !important;box-sizing:border-box;}
+@media(max-width:1100px){.feature-pill{flex:0 0 calc(33.33% - 8px) !important;}}
+@media(max-width:768px){.feature-pill{flex:0 0 calc(50% - 6px) !important;}}
+@media(max-width:480px){.feature-pill{flex:0 0 100% !important;}}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { color: #1A1A1A; overflow-x: hidden; }
+h1 { font-family: 'Signifier', Georgia, serif; font-weight: 400; letter-spacing: -0.03em; }
+h2 { font-family: 'Signifier', Georgia, serif; font-weight: 400; letter-spacing: -0.03em; }
+h3,h4 { font-family: 'Signifier', Georgia, serif; }
+
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: #FAFAF7; }
+.footer-cta .hero-bg { background: #1A1A1A; }
+.hero-grid { position: absolute; inset: 0; z-index: 1; display: none; }
+.hero-fade { display: none; }
+
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes marquee-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
+.marquee-track { animation: marquee 60s linear infinite; display: flex; width: max-content; gap: 24px; }
+.marquee-track-reverse { animation: marquee-reverse 55s linear infinite; display: flex; width: max-content; gap: 24px; }
+.marquee-slow { animation: marquee 125s linear infinite; display: flex; width: max-content; gap: 20px; }
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.card-hover { transition: all 0.3s; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+
+.glow-btn {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 0 30px rgba(140,56,250,0.3), 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.section-max { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.pfp { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.pfp-lg { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+
+.slack-card { background: #fff; border: 1px solid #EEE; border-radius: 12px; padding: 16px 20px; min-width: 450px; max-width: 520px; flex-shrink: 0; transition: all 0.2s ease; }
+.slack-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.slack-msg { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+.slack-msg:last-child { margin-bottom: 0; }
+.slack-name { font-weight: 600; font-size: 13px; color: #1A1A1A; }
+.slack-text { font-size: 13px; color: #666; line-height: 1.5; }
+.slack-agent .slack-text { color: #666; }
+.slack-text a { color: #2253CE; text-decoration: none; }
+.slack-text a:hover { text-decoration: underline; }
+.cat-label { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 12px; }
+.cat-icons { display: flex; gap: 6px; align-items: center; }
+.cat-icons img { width: 16px; height: 16px; border-radius: 4px; object-fit: cover; }
+
+.slack-card-light { background: #fff; border: 1px solid #EEE; border-radius: 16px; padding: 20px 24px; }
+.slack-card-light .slack-name { color: #1A1A1A; }
+.slack-card-light .slack-text { color: #666; }
+.slack-card-light .slack-agent .slack-text { color: #666; }
+.slack-card-light .cat-label { color: #999; }
+.slack-card-light .cat-icons img { opacity: 0.7; }
+
+.num-container { border: 1px solid rgba(26,26,26,0.08); border-radius: 8px; padding: 8px 16px; background: white; flex-shrink: 0; }
+.num-text { font-family: "Signifier", Georgia, serif; font-size: 24px; font-weight: 400; color: rgba(26,26,26,0.1); letter-spacing: -0.02em; }
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.passport-card { background: linear-gradient(135deg, #f8f6ff, #fff); border: 1px solid #e8e4f0; border-radius: 12px; padding: 24px; min-width: 280px; transition: all 0.2s ease; }
+.passport-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+.persona-card { background: #fff; border: 1px solid #EEE; border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: all 0.2s ease; }
+.persona-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.persona-card:hover, .persona-card.active { border-color: #8c38fa; box-shadow: 0 4px 20px rgba(140,56,250,0.1); }
+
+.bento-card { background: #fff; border: 1px solid rgba(26,26,26,0.06); border-radius: 12px; padding: 32px; transition: all 0.2s ease; }
+.bento-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+details summary { cursor: pointer; list-style: none; font-size: 16px; font-weight: 600; }
+details summary::-webkit-details-marker { display: none; }
+details summary::after { content: '+'; float: right; font-size: 20px; font-weight: 400; color: #999; transition: transform 0.2s; }
+details[open] summary::after { content: '−'; }
+details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #666; font-size: 15px; line-height: 1.7; }
+@keyframes slideDown { from { opacity: 0; max-height: 0; } to { opacity: 1; max-height: 500px; } }
+
+.text-secondary { color: rgba(26,26,26,0.5) !important; }
+
+.cta-btn { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; font-size: 15px; font-weight: 500; transition: all 0.2s ease; }
+
+.testimonial-card { position: relative; }
+.testimonial-card::before { content: '\201C'; position: absolute; top: 12px; left: 20px; font-size: 64px; line-height: 1; font-family: 'Signifier', Georgia, serif; color: rgba(26,26,26,0.06); pointer-events: none; }
+@media (max-width: 768px) { .how-cards { flex-direction: column !important; } }
+
+/* Roles tabs styles */
+.role-tab{position:relative;display:block;width:100%;text-align:left;padding:12px 20px;border-radius:12px;font-size:14px;font-family:'Switzer',system-ui,sans-serif;cursor:pointer;border:none;background:transparent;color:#666;transition:background 0.2s,color 0.2s;overflow:hidden}
+.role-tab.active{background:#1A1A1A;color:#fff}
+.role-tab .tab-progress{position:absolute;top:0;left:0;width:2px;height:0%;background:rgba(255,255,255,0.4);border-radius:2px}
+.role-tab:not(.active) .tab-progress{display:none}
+.roles-card{background:#fff;border-radius:20px;border:1px solid rgba(26,26,26,0.06);padding:40px;display:flex;gap:40px;align-items:flex-start;height:100%;box-sizing:border-box}
+.roles-card-left{flex:1;min-width:0}
+.roles-card-left h3{font-family:'Signifier',Georgia,serif;font-size:28px;font-weight:500;color:#1A1A1A;margin:0 0 20px}
+.roles-card-left ul{list-style:none;padding:0;margin:0 0 16px}
+.roles-card-left li{font-family:'Switzer',system-ui,sans-serif;font-size:16px;color:#666;line-height:1.6;padding-left:16px;position:relative}
+.roles-card-left li::before{content:'•';position:absolute;left:0;color:#999}
+.roles-card-right{width:340px;flex-shrink:0;height:280px;background:#F0EDE8;border-radius:16px}
+@media(max-width:768px){
+  #roles-section{padding:60px 20px!important}
+  .roles-card{flex-direction:column}
+  .roles-card-right{width:100%;height:200px}
+}
