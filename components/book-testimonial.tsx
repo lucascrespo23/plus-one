@@ -197,7 +197,7 @@ export default function BookTestimonial() {
               <div
                 key={`${agent.name}-profile`}
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(to right, #FFFFFF 92%, #f0efeb)',
                   width: 340,
                   height: 480,
                   boxSizing: 'border-box',
@@ -205,16 +205,6 @@ export default function BookTestimonial() {
                   position: 'relative',
                 }}
               >
-                {/* Dashed spine divider — right edge, inside page */}
-                <div style={{
-                  position: 'absolute',
-                  top: '8%',
-                  bottom: '8%',
-                  right: 0,
-                  borderRight: '1px dashed #d0d0d0',
-                  pointerEvents: 'none',
-                  zIndex: 2,
-                }} />
                 <div style={{
                   padding: '48px 40px',
                   width: '100%',
@@ -275,7 +265,7 @@ export default function BookTestimonial() {
               <div
                 key={`${agent.name}-testimonial`}
                 style={{
-                  background: '#FFFFFF',
+                  background: 'linear-gradient(to left, #FFFFFF 92%, #f0efeb)',
                   width: 340,
                   height: 480,
                   boxSizing: 'border-box',
@@ -283,16 +273,6 @@ export default function BookTestimonial() {
                   position: 'relative',
                 }}
               >
-                {/* Dashed spine divider — left edge, inside page */}
-                <div style={{
-                  position: 'absolute',
-                  top: '8%',
-                  bottom: '8%',
-                  left: 0,
-                  borderLeft: '1px dashed #d0d0d0',
-                  pointerEvents: 'none',
-                  zIndex: 2,
-                }} />
                 <div style={{
                   padding: '48px 40px',
                   width: '100%',

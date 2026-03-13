@@ -158,4 +158,4 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item:last-child {
   background: #1a1f3d !important;
 }
-/* no external divider — divider is inside page content */
+/* book spread: subtle shadow at spine via book-shadow gradient */
