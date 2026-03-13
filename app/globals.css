@@ -150,7 +150,7 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 
 /* react-pageflip: solid backgrounds on both sides of pages */
 .stf__item {
-  background: #FFFFFF !important;
+  background: transparent !important;
 }
 .stf__item:first-child {
   background: #1a1f3d !important;
