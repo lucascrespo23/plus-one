@@ -171,7 +171,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
   <div style="display:flex;gap:16px;" class="how-cards">
     <div style="background:#FFFFFF;border:1px solid rgba(26,26,26,0.063);border-radius:16px;display:flex;flex:1 1 0%;flex-direction:column;gap:20px;padding:32px;">
       <div style="color:rgba(26,26,26,0.071);font-family:'Signifier',Georgia,serif;font-size:56px;font-weight:400;line-height:68px;">01</div>
-      <div style="color:#1A1A1A;font-family:'Signifier',Georgia,serif;font-size:22px;font-weight:400;line-height:28px;">Add it to your Slack workspace and name your Plus One</div>
+      <div style="color:#1A1A1A;font-family:'Signifier',Georgia,serif;font-size:22px;font-weight:400;line-height:28px;">Add it to your Slack workspace and name your +1</div>
       <div style="background:#FAFAF7;border-radius:10px;display:flex;flex-direction:column;gap:8px;padding:16px;">
         <div style="font-size:14px;line-height:1.55;"><span style="color:#4A8C4A;font-weight:600;font-family:'Switzer',system-ui,sans-serif;">Agent:</span><span style="color:#1A1A1A;font-family:'Switzer',system-ui,sans-serif;"> "Hey there, what do you want to call me?"</span></div>
         <div style="font-size:14px;line-height:1.55;"><span style="color:#1A1A1A;font-weight:600;font-family:'Switzer',system-ui,sans-serif;">Human:</span><span style="color:rgba(26,26,26,0.5);font-family:'Switzer',system-ui,sans-serif;"> "Carol. Actually, Zosia."</span></div>
