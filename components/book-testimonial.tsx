@@ -395,10 +395,9 @@ export default function BookTestimonial() {
               </p>
             </div>
           </HTMLFlipBook>
-        </div>
-      </div>
-      {/* Arrow controls — centered below the book */}
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, marginTop: 28, paddingBottom: 8, position: 'relative', zIndex: 50, background: 'red', padding: 20 }}>
+
+          {/* Arrow controls — centered below the book spread */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, marginTop: 28 }}>
         <button
           onClick={() => book.current?.pageFlip()?.flipPrev()}
           style={{
@@ -435,6 +434,8 @@ export default function BookTestimonial() {
         >
           →
         </button>
+          </div>
+        </div>
       </div>
     </section>
   )
