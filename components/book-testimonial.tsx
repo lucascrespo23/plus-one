@@ -189,93 +189,12 @@ export default function BookTestimonial() {
               />
             </div>
 
-            {/* INDEX */}
-            <div
-              style={{
-                background: '#F5F3EE',
-                width: 340,
-                height: 480,
-                padding: '36px 28px',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: 'var(--font-signifier, Georgia, serif)',
-                  fontSize: 22,
-                  fontWeight: 400,
-                  marginBottom: 8,
-                  color: '#1a1f3d',
-                }}
-              >
-                The Team
-              </h3>
-              <div
-                style={{
-                  width: 40,
-                  height: 2,
-                  background: '#1a1f3d',
-                  marginBottom: 24,
-                }}
-              />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                {agents.map((agent, i) => (
-                  <div
-                    key={agent.name}
-                    onClick={() => flipTo(i + 2)}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 14,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    <img
-                      src={agent.img}
-                      alt={agent.name}
-                      style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                      }}
-                    />
-                    <div>
-                      <div
-                        style={{
-                          fontFamily: 'var(--font-signifier, Georgia, serif)',
-                          fontSize: 16,
-                          color: '#1a1f3d',
-                          fontWeight: 500,
-                        }}
-                      >
-                        {agent.name}
-                      </div>
-                      <div style={{ fontSize: 12, color: '#888', marginTop: 1 }}>
-                        Reports to {agent.reportsTo}
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        marginLeft: 'auto',
-                        fontSize: 12,
-                        color: '#aaa',
-                      }}
-                    >
-                      p.{i + 1}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* AGENT PAGES */}
             {agents.map((agent, i) => (
               <div
                 key={agent.name}
                 style={{
-                  background: '#FAFAF7',
+                  background: '#FFFFFF',
                   width: 340,
                   height: 480,
                   padding: '32px 26px 20px',
