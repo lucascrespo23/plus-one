@@ -8,7 +8,7 @@ const ROLES: { id: string; label: string; title: string; bullets: string[]; imag
   { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"], image: "/img/role-growth.jpg" },
   { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"], image: "/img/role-support.jpg" },
   { id: "engineers", label: "Engineers", title: "Engineers", bullets: ["Code review & PRs", "Bug triage & fixes", "Documentation", "Prototype & MVP builds"], image: "/img/role-engineers.jpg" },
-  { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"] },
+  { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"], image: "/img/role-creators.jpg" },
   { id: "finance", label: "Finance", title: "Finance", image: "/img/role-finance.jpg", bullets: ["Revenue tracking", "Expense categorization", "Financial reporting", "Forecasting & modeling"] },
   { id: "design", label: "Design", title: "Design", image: "/img/role-design.jpg", bullets: ["Design iteration & feedback", "Asset management", "Prototyping", "Design system docs"] },
   { id: "product", label: "Product Managers", title: "Product Managers", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
