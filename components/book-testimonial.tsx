@@ -378,20 +378,22 @@ export default function BookTestimonial() {
               </p>
             </div>
           </HTMLFlipBook>
-            {/* Made by Every stamp — revealed when back cover is on left */}
-            <img
-              src="/img/made-by-every.jpg"
-              alt="Made by Every"
-              style={{
-                position: 'absolute',
-                right: -40,
-                bottom: 60,
-                width: 220,
-                opacity: 0.85,
-                zIndex: 1,
-                pointerEvents: 'none',
-              }}
-            />
+          {/* Made by Every stamp — fades in on back cover */}
+          <img
+            src="/img/made-by-every.jpg"
+            alt="Made by Every"
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: 200,
+              opacity: currentPage >= totalPages - 2 ? 0.85 : 0,
+              zIndex: 50,
+              pointerEvents: 'none',
+              transition: 'opacity 0.6s ease',
+            }}
+          />
 
           {/* Arrow controls — below the book */}
           <div
