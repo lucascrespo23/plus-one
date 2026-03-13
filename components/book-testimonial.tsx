@@ -78,7 +78,7 @@ export default function BookTestimonial() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const hasFlipped = useRef(false)
   const [currentPage, setCurrentPage] = useState(0)
-  const totalPages = 15
+  const totalPages = 14
 
   const flipTo = useCallback((page: number) => {
     book.current?.pageFlip()?.flip(page)
@@ -143,6 +143,20 @@ export default function BookTestimonial() {
 
         {/* Right: Book */}
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+          <img
+            src="/img/made-by-every.jpg"
+            alt="Made by Every"
+            style={{
+              position: 'absolute',
+              right: -30,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: 220,
+              opacity: 0.85,
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          />
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -376,19 +390,6 @@ export default function BookTestimonial() {
               <p style={{ fontSize: 14, color: '#8888aa', marginTop: 8 }}>
                 every.to
               </p>
-            </div>
-            {/* STAMP PAGE (transparent, behind back cover) */}
-            <div
-              style={{
-                background: 'transparent',
-                width: 340,
-                height: 480,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <img src="/img/made-by-every.jpg" style={{ width: 200, opacity: 0.9 }} />
             </div>
           </HTMLFlipBook>
 
