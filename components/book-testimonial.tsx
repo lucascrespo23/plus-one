@@ -84,6 +84,25 @@ export default function BookTestimonial() {
     book.current?.pageFlip()?.flip(page)
   }, [])
 
+  // Force the empty spread slot to be transparent
+  // The library sets style.cssText on .stf__item elements, overriding CSS.
+  // We use a MutationObserver to continuously enforce transparency on the empty slot.
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const items = document.querySelectorAll('.stf__item')
+      if (items.length > 0) {
+        // The last .stf__item is the empty right-page slot in spread mode
+        const lastItem = items[items.length - 1] as HTMLElement
+        // Check if it has no meaningful content (empty spread slot)
+        if (lastItem && (!lastItem.children.length || lastItem.children[0]?.children?.length === 0)) {
+          lastItem.style.setProperty('background', 'transparent', 'important')
+          lastItem.style.setProperty('box-shadow', 'none', 'important')
+        }
+      }
+    }, 100)
+    return () => clearInterval(interval)
+  }, [])
+
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
