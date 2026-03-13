@@ -589,6 +589,21 @@ const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
 export default function Home() {
   return (
     <>
+      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 40px", borderBottom: "1px solid rgba(26,26,26,0.08)", background: "#FAFAF7", position: "sticky", top: 0, zIndex: 100 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <button style={{ background: "none", border: "none", cursor: "pointer", padding: "4px" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <button style={{ background: "none", border: "none", cursor: "pointer", padding: "4px" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+        <img src="/img/every-logo.jpg" alt="Every" style={{ height: "24px" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", color: "#1A1A1A", textDecoration: "none" }}>Sign In</a>
+          <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", background: "#1A1A1A", color: "white", padding: "8px 20px", borderRadius: "999px", textDecoration: "none" }}>Subscribe</a>
+        </div>
+      </nav>
       <HeroTypewriter />
       <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
