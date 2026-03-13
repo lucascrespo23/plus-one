@@ -200,24 +200,31 @@ export default function BookTestimonial() {
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
+                  boxSizing: 'border-box',
+                  overflow: 'hidden',
+                  position: 'relative',
+                }}
+              >
+                <div style={{
                   padding: '48px 40px',
+                  width: '100%',
+                  height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
                   textAlign: 'center',
-                  position: 'relative',
-                }}
-              >
+                  boxSizing: 'border-box',
+                }}>
                 <img
                   src={agent.img}
                   alt={agent.name}
                   style={{
-                    width: 120,
-                    height: 120,
+                    width: 100,
+                    height: 100,
                     borderRadius: '50%',
                     objectFit: 'cover',
-                    marginBottom: 20,
+                    marginBottom: 16,
                     border: '3px solid #eee',
                   }}
                 />
@@ -248,16 +255,9 @@ export default function BookTestimonial() {
                 </p>
 
                 {/* Page number */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 14,
-                    right: 20,
-                    fontSize: 11,
-                    color: '#ccc',
-                  }}
-                >
+                <div style={{ fontSize: 11, color: '#ccc', marginTop: 'auto', textAlign: 'right' }}>
                   {i * 2 + 1}
+                </div>
                 </div>
               </div>,
 
@@ -268,22 +268,28 @@ export default function BookTestimonial() {
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '48px 40px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
+                  boxSizing: 'border-box',
+                  overflow: 'hidden',
                   position: 'relative',
                 }}
               >
+                <div style={{
+                  padding: '48px 40px',
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  boxSizing: 'border-box',
+                }}>
                 {/* Decorative quote mark */}
                 <div
                   style={{
                     fontFamily: 'Georgia, serif',
-                    fontSize: 72,
+                    fontSize: 48,
                     lineHeight: 1,
                     color: '#ddd',
-                    marginBottom: -12,
-                    marginTop: -20,
+                    marginBottom: 4,
                   }}
                 >
                   &ldquo;
@@ -293,13 +299,14 @@ export default function BookTestimonial() {
                 <p
                   style={{
                     fontFamily: 'var(--font-signifier, Georgia, serif)',
-                    fontSize: 17,
+                    fontSize: 16,
                     fontStyle: 'italic',
-                    lineHeight: 1.7,
+                    lineHeight: 1.65,
                     color: '#333',
                     flex: 1,
                     display: 'flex',
                     alignItems: 'center',
+                    margin: 0,
                   }}
                 >
                   {agent.testimonial}
@@ -309,12 +316,12 @@ export default function BookTestimonial() {
                 <div
                   style={{
                     fontFamily: 'Georgia, serif',
-                    fontSize: 72,
+                    fontSize: 48,
                     lineHeight: 1,
                     color: '#ddd',
                     textAlign: 'right',
-                    marginTop: -16,
-                    marginBottom: 8,
+                    marginTop: 4,
+                    marginBottom: 12,
                   }}
                 >
                   &rdquo;
@@ -352,16 +359,9 @@ export default function BookTestimonial() {
                 </div>
 
                 {/* Page number */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 14,
-                    left: 20,
-                    fontSize: 11,
-                    color: '#ccc',
-                  }}
-                >
+                <div style={{ fontSize: 11, color: '#ccc', textAlign: 'left', marginTop: 'auto' }}>
                   {i * 2 + 2}
+                </div>
                 </div>
               </div>,
             ])}
