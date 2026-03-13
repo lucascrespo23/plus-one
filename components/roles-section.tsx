@@ -9,7 +9,7 @@ const ROLES: { id: string; label: string; title: string; bullets: string[]; imag
   { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"], image: "/img/role-support.jpg" },
   { id: "engineers", label: "Engineers", title: "Engineers", bullets: ["Code review & PRs", "Bug triage & fixes", "Documentation", "Prototype & MVP builds"] },
   { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"] },
-  { id: "finance", label: "Finance", title: "Finance", bullets: ["Revenue tracking", "Expense categorization", "Financial reporting", "Forecasting & modeling"] },
+  { id: "finance", label: "Finance", title: "Finance", image: "/img/role-finance.jpg", bullets: ["Revenue tracking", "Expense categorization", "Financial reporting", "Forecasting & modeling"] },
   { id: "design", label: "Design", title: "Design", bullets: ["Design iteration & feedback", "Asset management", "Prototyping", "Design system docs"] },
   { id: "product", label: "Product Managers", title: "Product Managers", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
   { id: "research", label: "Research & Analysis", title: "Research & Analysis", bullets: ["Data collection & cleaning", "Trend analysis", "Report generation", "Market research"] },
