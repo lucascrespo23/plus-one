@@ -168,4 +168,14 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__parent {
   filter: drop-shadow(0 8px 32px rgba(0,0,0,0.12));
 }
-/* cache-bust-v6 */
+/* === Mobile Optimization === */
+@media (max-width: 767px) {
+  .opportunity-section { padding-bottom: 120px !important; }
+  .how-section { padding-inline: 20px !important; padding-block: 60px !important; }
+  .how-section h2 { font-size: 32px !important; line-height: 40px !important; }
+  .features-section { padding-inline: 20px !important; padding-block: 60px !important; }
+  .features-section > div:first-child > div:first-child { font-size: 32px !important; line-height: 40px !important; }
+  .slack-card { min-width: 300px !important; max-width: 340px !important; }
+  .section-max { padding: 0 16px; }
+}
+/* cache-bust-v7 */

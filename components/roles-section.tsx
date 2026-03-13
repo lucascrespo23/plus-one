@@ -21,6 +21,14 @@ export default function RolesSection() {
   const [activeTab, setActiveTab] = useState(ROLES[0].id);
   const [isPaused, setIsPaused] = useState(false);
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const pauseAndResume = useCallback(() => {
     setIsPaused(true);
@@ -43,14 +51,14 @@ export default function RolesSection() {
   const activeRole = ROLES.find(r => r.id === activeTab)!;
 
   return (
-    <section style={{ background: "#F3F2EE", padding: "100px 120px" }}>
+    <section style={{ background: "#F3F2EE", padding: isMobile ? "60px 20px" : "100px 120px" }}>
       <div
-        style={{ display: "flex", gap: "36px", alignItems: "stretch" }}
+        style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: "36px", alignItems: "stretch" }}
         onMouseEnter={() => { setIsPaused(true); if (resumeTimer.current) clearTimeout(resumeTimer.current); }}
         onMouseLeave={() => { resumeTimer.current = setTimeout(() => setIsPaused(false), 6000); }}
       >
         {/* Left 50%: headline + subhead, sticky */}
-        <div style={{ width: "50%", flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", paddingRight: "32px" }}>
+        <div style={{ width: isMobile ? "100%" : "50%", flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", paddingRight: isMobile ? "0" : "32px" }}>
           <h2 style={{
             margin: 0,
             color: "#1A1A1A",
@@ -74,7 +82,7 @@ export default function RolesSection() {
         </div>
 
         {/* Right 50%: horizontal tabs + content card */}
-        <div style={{ width: "50%", display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ width: isMobile ? "100%" : "50%", display: "flex", flexDirection: "column", gap: "16px" }}>
           {/* Horizontal pill tabs */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {ROLES.map(role => (
@@ -127,7 +135,7 @@ export default function RolesSection() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                style={{ display: "flex", gap: "32px", height: "100%" }}
+                style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: isMobile ? "20px" : "32px", height: "100%" }}
               >
                 <div style={{ flex: 1 }}>
                   <h3 style={{ fontFamily: "'Signifier', Georgia, serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 20px 0" }}>
@@ -142,11 +150,11 @@ export default function RolesSection() {
                   </ul>
                 </div>
                 {activeRole.image ? (
-                  <div style={{ width: "280px", flexShrink: 0, borderRadius: "16px", minHeight: "280px", overflow: "hidden" }}>
+                  <div style={{ width: isMobile ? "100%" : "280px", flexShrink: 0, borderRadius: "16px", minHeight: isMobile ? "200px" : "280px", overflow: "hidden" }}>
                     <img src={activeRole.image} alt={activeRole.title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }} />
                   </div>
                 ) : (
-                  <div style={{ width: "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: "280px" }} />
+                  <div style={{ width: isMobile ? "100%" : "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: isMobile ? "200px" : "280px" }} />
                 )}
               </motion.div>
             </AnimatePresence>

@@ -20,7 +20,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
       <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:416px; width:52%; margin:0 auto; display:block;">
     </div>
 
-    <h1 id="hero-headline" class="text-5xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
+    <h1 id="hero-headline" class="text-4xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
       Promote yourself with a <span style="background: linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3); background-size: 400% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-shift 6s linear infinite;">+1</span>
     </h1>
 
@@ -152,7 +152,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 </section>
 
 <!-- THE OPPORTUNITY -->
-<section style="padding-top:60px;padding-bottom:320px">
+<section class="opportunity-section" style="padding-top:60px;padding-bottom:320px">
   <div class="section-max text-center">
     <h2 class="text-4xl md:text-6xl font-medium tracking-tight mb-6">Do 10x the work,<br>10x as fast, 10x as fun</h2>
     <p class="text-secondary text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
@@ -165,7 +165,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
 <!-- HOW IT WORKS -->
 <section id="how-it-works">
-<div style="border-top:1px solid rgba(26,26,26,0.063);display:flex;flex-direction:column;font-size:12px;gap:48px;line-height:16px;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
+<div class="how-section" style="border-top:1px solid rgba(26,26,26,0.063);display:flex;flex-direction:column;font-size:12px;gap:48px;line-height:16px;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;">
   <div style="display:flex;flex-direction:column;gap:12px;">
     <h2 style="margin:0;color:#1A1A1A;font-family:'Signifier',Georgia,serif;font-size:45px;font-weight:400;letter-spacing:-0.03em;line-height:54px;">How to 10x your work</h2>
   </div>
@@ -202,7 +202,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 
 <!-- COMES PRE-BUILT -->
 <section id="features">
-<div style="border-top-color:#1A1A1A10;border-top-style:solid;border-top-width:1px;box-sizing:border-box;display:flex;flex-direction:column;font-size:12px;font-synthesis:none;gap:48px;line-height:16px;-moz-osx-font-smoothing:grayscale;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;">
+<div class="features-section" style="border-top-color:#1A1A1A10;border-top-style:solid;border-top-width:1px;box-sizing:border-box;display:flex;flex-direction:column;font-size:12px;font-synthesis:none;gap:48px;line-height:16px;-moz-osx-font-smoothing:grayscale;padding-block:100px;padding-inline:64px;width:100%;-webkit-font-smoothing:antialiased;">
 <div style="box-sizing:border-box;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;">
 <div style="box-sizing:border-box;color:#1A1A1A;font-family:'Signifier',Georgia,serif;font-size:45px;letter-spacing:-0.03em;line-height:54px;">
 +1s are optimized for work
@@ -347,7 +347,7 @@ const AFTER_ROLES = `<!-- SECURITY -->
 <!-- CTA -->
 <section class="py-24">
   <div class="section-max text-center max-w-3xl">
-    <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">One subscription. Everything you need.</h2>
+    <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">One subscription.<br>Everything you need.</h2>
     <p class="text-secondary text-lg leading-relaxed mb-10">Plus One is included in Every's bundle. It's currently in invite-only beta access. Want a Plus One?</p>
     <a href="#" class="cta-btn bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90 transition">Join the waitlist →</a>
   </div>

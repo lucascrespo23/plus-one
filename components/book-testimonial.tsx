@@ -79,9 +79,16 @@ export default function BookTestimonial() {
   const hasFlipped = useRef(false)
   const [currentPage, setCurrentPage] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const totalPages = 14
 
-  useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    setMounted(true)
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const flipTo = useCallback((page: number) => {
     book.current?.pageFlip()?.flip(page)
@@ -119,25 +126,26 @@ export default function BookTestimonial() {
         style={{
           background: 'transparent',
           borderRadius: 16,
-          padding: '56px 40px',
+          padding: isMobile ? '32px 16px' : '56px 40px',
           width: '100%',
           maxWidth: 1400,
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 80,
+          gap: isMobile ? 40 : 80,
         }}
       >
         {/* Left: Heading */}
-        <div style={{ flex: '1 1 auto', maxWidth: 420 }}>
+        <div style={{ flex: '1 1 auto', maxWidth: isMobile ? '100%' : 420, textAlign: isMobile ? 'center' : 'left' }}>
           <h2
             className="font-light tracking-tight"
             style={{
               fontFamily: 'var(--font-signifier, Georgia, serif)',
-              textAlign: 'left',
+              textAlign: isMobile ? 'center' : 'left',
               lineHeight: 1.1,
               margin: 0,
-              fontSize: '3rem',
+              fontSize: isMobile ? '2rem' : '3rem',
             }}
           >
             Every human deserves a Plus One
@@ -145,16 +153,16 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', transform: mounted && (currentPage === 0 || currentPage >= 12) ? 'translateX(170px)' : 'translateX(0)', transition: 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', transform: !isMobile && mounted && (currentPage === 0 || currentPage >= 12) ? 'translateX(170px)' : 'translateX(0)', transition: 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
-            width={340}
-            height={480}
+            width={isMobile ? 280 : 340}
+            height={isMobile ? 400 : 480}
             showCover={true}
             drawShadow={true}
             flippingTime={800}
-            usePortrait={false}
+            usePortrait={isMobile}
             startPage={0}
             size="fixed"
             minWidth={300}
@@ -180,8 +188,8 @@ export default function BookTestimonial() {
               style={{
                 background: '#1a1f3d',
                 borderRadius: '0 8px 8px 0',
-                width: 340,
-                height: 480,
+                width: "100%",
+                height: "100%",
               }}
             >
               <img
@@ -202,8 +210,8 @@ export default function BookTestimonial() {
                 key={`${agent.name}-profile`}
                 style={{
                   background: '#FFFFFF',
-                  width: 340,
-                  height: 480,
+                  width: "100%",
+                  height: "100%",
                   boxSizing: 'border-box',
                   overflow: 'hidden',
                 }}
@@ -265,8 +273,8 @@ export default function BookTestimonial() {
                 key={`${agent.name}-testimonial`}
                 style={{
                   background: '#FFFFFF',
-                  width: 340,
-                  height: 480,
+                  width: "100%",
+                  height: "100%",
                   boxSizing: 'border-box',
                   overflow: 'hidden',
                 }}
@@ -356,8 +364,8 @@ export default function BookTestimonial() {
             <div
               style={{
                 background: '#1a1f3d',
-                width: 340,
-                height: 480,
+                width: "100%",
+                height: "100%",
                 borderRadius: '0 8px 8px 0',
                 overflow: 'hidden',
               }}
