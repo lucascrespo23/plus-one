@@ -584,10 +584,16 @@ const MARQUEE_HTML = `
       </div>
 `;
 
+// Split BEFORE_BENTO: hero ends at first </section>, rest follows
+const HERO_END_MARKER = '<!-- THE OPPORTUNITY -->';
+const heroEndIdx = BEFORE_BENTO.indexOf(HERO_END_MARKER);
+const HERO_HTML = BEFORE_BENTO.slice(0, heroEndIdx);
+const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
+
 export default function Home() {
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: BEFORE_BENTO }} />
+      <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
       <ContainerScroll
         titleComponent={
@@ -596,6 +602,8 @@ export default function Home() {
       >
         <div dangerouslySetInnerHTML={{ __html: MARQUEE_HTML }} />
       </ContainerScroll>
+
+      <div dangerouslySetInnerHTML={{ __html: REST_BEFORE_BENTO }} />
 
       <section style={{ padding: "140px 64px" }}>
         <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px", textAlign: "center" }}>
