@@ -11,7 +11,7 @@ const ROLES: { id: string; label: string; title: string; bullets: string[]; imag
   { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"], image: "/img/role-creators.jpg" },
   { id: "finance", label: "Finance", title: "Finance", image: "/img/role-finance.jpg", bullets: ["Revenue tracking", "Expense categorization", "Financial reporting", "Forecasting & modeling"] },
   { id: "design", label: "Design", title: "Design", image: "/img/role-design.jpg", bullets: ["Design iteration & feedback", "Asset management", "Prototyping", "Design system docs"] },
-  { id: "product", label: "Product Managers", title: "Product Managers", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
+  { id: "product", label: "Product Managers", title: "Product Managers", image: "/img/role-product.jpg", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
   { id: "research", label: "Research & Analysis", title: "Research & Analysis", bullets: ["Data collection & cleaning", "Trend analysis", "Report generation", "Market research"] },
   { id: "operations", label: "Operations", title: "Operations", bullets: ["Process automation", "Tool migrations", "Vendor coordination", "Workflow optimization"] },
   { id: "sales", label: "Sales", title: "Sales", bullets: ["Lead qualification", "CRM management", "Follow-up sequences", "Pipeline reporting"], image: "/img/role-sales.jpg" },
