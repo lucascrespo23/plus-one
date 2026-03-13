@@ -37,19 +37,19 @@ export default function RolesSection() {
 
   return (
     <section style={{ background: "#F3F2EE", padding: "100px 64px" }}>
-      <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px" }}>
-        A +1 for every style of work
-      </h2>
-      <p style={{ color: "rgba(26,26,26,0.5)", fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", marginTop: "12px", marginBottom: "48px" }}>
-        No matter who you are and what you do, a +1 will help.
-      </p>
-
-      <div style={{ display: "flex", gap: "32px", alignItems: "stretch" }}
+      <div style={{ display: "flex", gap: "32px", alignItems: "flex-start" }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => { setIsPaused(false); }}
       >
-        {/* Left: vertical tabs */}
-        <div style={{ width: "280px", flexShrink: 0, display: "flex", flexDirection: "column", gap: "4px" }}>
+        {/* Left: headline + subhead + vertical tabs */}
+        <div style={{ width: "300px", flexShrink: 0, position: "sticky", top: "32px", display: "flex", flexDirection: "column" }}>
+          <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px" }}>
+            A +1 for every style of work
+          </h2>
+          <p style={{ color: "rgba(26,26,26,0.5)", fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", marginTop: "12px", marginBottom: "32px" }}>
+            No matter who you are and what you do, a +1 will help.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           {ROLES.map(role => (
             <button
               key={role.id}
@@ -83,6 +83,7 @@ export default function RolesSection() {
               <span style={{ position: "relative", zIndex: 10 }}>{role.label}</span>
             </button>
           ))}
+          </div>
         </div>
 
         {/* Right: content card */}
