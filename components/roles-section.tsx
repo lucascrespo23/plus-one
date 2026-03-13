@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ROLES: { id: string; label: string; title: string; bullets: string[]; image?: string }[] = [
-  { id: "founders", label: "Founders & Operators", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"], image: "/img/role-founders.jpg" },
+  { id: "founders", label: "Founders", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"], image: "/img/role-founders.jpg" },
   { id: "editors", label: "Editors & Content", title: "Editors & Content", image: "/img/role-editors.jpg", bullets: ["Draft and edit articles", "Style consistency checks", "Publishing workflows", "Content calendar management"] },
   { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"], image: "/img/role-growth.jpg" },
   { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"], image: "/img/role-support.jpg" },
@@ -13,7 +13,7 @@ const ROLES: { id: string; label: string; title: string; bullets: string[]; imag
   { id: "design", label: "Design", title: "Design", image: "/img/role-design.jpg", bullets: ["Design iteration & feedback", "Asset management", "Prototyping", "Design system docs"] },
   { id: "product", label: "Product Managers", title: "Product Managers", image: "/img/role-product.jpg", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
   { id: "research", label: "Research & Analysis", title: "Research & Analysis", image: "/img/role-research.jpg", bullets: ["Data collection & cleaning", "Trend analysis", "Report generation", "Market research"] },
-  { id: "operations", label: "Operations", title: "Operations", bullets: ["Process automation", "Tool migrations", "Vendor coordination", "Workflow optimization"] },
+  { id: "operations", label: "Operations", title: "Operations", image: "/img/role-operations.jpg", bullets: ["Process automation", "Tool migrations", "Vendor coordination", "Workflow optimization"] },
   { id: "sales", label: "Sales", title: "Sales", bullets: ["Lead qualification", "CRM management", "Follow-up sequences", "Pipeline reporting"], image: "/img/role-sales.jpg" },
 ];
 
