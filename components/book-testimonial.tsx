@@ -398,7 +398,7 @@ export default function BookTestimonial() {
         </div>
       </div>
       {/* Arrow controls — centered below the book */}
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, marginTop: 24 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, marginTop: 28, paddingBottom: 8 }}>
         <button
           onClick={() => book.current?.pageFlip()?.flipPrev()}
           style={{
@@ -407,7 +407,7 @@ export default function BookTestimonial() {
             cursor: 'pointer',
             padding: 8,
             color: '#999',
-            fontSize: 20,
+            fontSize: 24,
             lineHeight: 1,
             transition: 'color 0.2s',
           }}
@@ -425,7 +425,7 @@ export default function BookTestimonial() {
             cursor: 'pointer',
             padding: 8,
             color: '#999',
-            fontSize: 20,
+            fontSize: 24,
             lineHeight: 1,
             transition: 'color 0.2s',
           }}
