@@ -2,8 +2,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const ROLES = [
-  { id: "founders", label: "Founders & Operators", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"] },
+const ROLES: { id: string; label: string; title: string; bullets: string[]; image?: string }[] = [
+  { id: "founders", label: "Founders & Operators", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"], image: "/img/role-founders.jpg" },
   { id: "editors", label: "Editors & Content", title: "Editors & Content", bullets: ["Draft and edit articles", "Style consistency checks", "Publishing workflows", "Content calendar management"] },
   { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"] },
   { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"] },
@@ -142,7 +142,13 @@ export default function RolesSection() {
                     ))}
                   </ul>
                 </div>
-                <div style={{ width: "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: "280px" }} />
+                {activeRole.image ? (
+                  <div style={{ width: "280px", flexShrink: 0, borderRadius: "16px", minHeight: "280px", overflow: "hidden" }}>
+                    <img src={activeRole.image} alt={activeRole.title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }} />
+                  </div>
+                ) : (
+                  <div style={{ width: "280px", flexShrink: 0, background: "#F0EDE8", borderRadius: "16px", minHeight: "280px" }} />
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
