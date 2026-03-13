@@ -78,13 +78,12 @@ export default function BookTestimonial() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const hasFlipped = useRef(false)
   const [currentPage, setCurrentPage] = useState(0)
-  const totalPages = 14 // 6 agents × 2 pages + 1 cover + 1 back cover
+  const totalPages = 14
 
   const flipTo = useCallback((page: number) => {
     book.current?.pageFlip()?.flip(page)
   }, [])
 
-  // Auto-open passport when section reaches center of viewport
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
@@ -143,7 +142,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -194,9 +193,8 @@ export default function BookTestimonial() {
               />
             </div>
 
-            {/* AGENT PAGES — 2 pages per agent: profile (LEFT) + testimonial (RIGHT) */}
-            {agents.flatMap((agent, i) => [
-              /* Profile page (even after cover — LEFT side) */
+            {/* AGENT PAGES — 2 pages per agent: profile + testimonial */}
+            {agents.flatMap((agent) => [
               <div
                 key={`${agent.name}-profile`}
                 style={{
@@ -205,57 +203,60 @@ export default function BookTestimonial() {
                   height: 480,
                   boxSizing: 'border-box',
                   overflow: 'hidden',
-                  position: 'relative',
                 }}
               >
-                <div style={{
-                  padding: '48px 40px',
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  boxSizing: 'border-box',
-                }}>
-                <img
-                  src={agent.img}
-                  alt={agent.name}
+                <div
                   style={{
-                    width: 100,
-                    height: 100,
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    marginBottom: 16,
-                    border: '3px solid #eee',
-                  }}
-                />
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-signifier, Georgia, serif)',
-                    fontSize: 28,
-                    fontWeight: 400,
-                    color: '#1a1f3d',
-                    margin: 0,
-                    lineHeight: 1.2,
+                    padding: '48px 40px',
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    boxSizing: 'border-box',
                   }}
                 >
-                  {agent.name}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: '#666',
-                    marginTop: 10,
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Reports to <strong>{agent.reportsTo}</strong>, {agent.role}
-                </p>
-                <p style={{ fontSize: 13, color: '#999', marginTop: 6 }}>
-                  Works with {agent.worksWith}
-                </p>
+                  <img
+                    src={agent.img}
+                    alt={agent.name}
+                    style={{
+                      width: 100,
+                      height: 100,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      marginBottom: 16,
+                      border: '3px solid #eee',
+                    }}
+                  />
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-signifier, Georgia, serif)',
+                      fontSize: 28,
+                      fontWeight: 400,
+                      color: '#1a1f3d',
+                      margin: 0,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {agent.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: '#666',
+                      marginTop: 10,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Reports to <strong>{agent.reportsTo}</strong>, {agent.role}
+                  </p>
+                  <p style={{ fontSize: 13, color: '#999', marginTop: 6 }}>
+                    Works with {agent.worksWith}
+                  </p>
+                </div>
+              </div>,
 
               <div
                 key={`${agent.name}-testimonial`}
@@ -265,98 +266,93 @@ export default function BookTestimonial() {
                   height: 480,
                   boxSizing: 'border-box',
                   overflow: 'hidden',
-                  position: 'relative',
                 }}
               >
-                <div style={{
-                  padding: '48px 40px',
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  boxSizing: 'border-box',
-                }}>
-                {/* Decorative quote mark */}
                 <div
                   style={{
-                    fontFamily: 'Georgia, serif',
-                    fontSize: 48,
-                    lineHeight: 1,
-                    color: '#ddd',
-                    marginBottom: 4,
-                  }}
-                >
-                  &ldquo;
-                </div>
-
-                {/* Testimonial text */}
-                <p
-                  style={{
-                    fontFamily: 'var(--font-signifier, Georgia, serif)',
-                    fontSize: 16,
-                    fontStyle: 'italic',
-                    lineHeight: 1.65,
-                    color: '#333',
-                    flex: 1,
+                    padding: '48px 40px',
+                    width: '100%',
+                    height: '100%',
                     display: 'flex',
-                    alignItems: 'center',
-                    margin: 0,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    boxSizing: 'border-box',
                   }}
                 >
-                  {agent.testimonial}
-                </p>
-
-                {/* Closing quote */}
-                <div
-                  style={{
-                    fontFamily: 'Georgia, serif',
-                    fontSize: 48,
-                    lineHeight: 1,
-                    color: '#ddd',
-                    textAlign: 'right',
-                    marginTop: 4,
-                    marginBottom: 12,
-                  }}
-                >
-                  &rdquo;
-                </div>
-
-                {/* Human attribution */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 12,
-                    marginTop: 8,
-                  }}
-                >
-                  <img
-                    src={agent.humanImg}
-                    alt={agent.humanName}
+                  <div
                     style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: '50%',
-                      objectFit: 'cover',
+                      fontFamily: 'Georgia, serif',
+                      fontSize: 48,
+                      lineHeight: 1,
+                      color: '#ddd',
+                      marginBottom: 4,
                     }}
-                  />
-                  <div>
-                    <div
-                      style={{ fontSize: 14, fontWeight: 600, color: '#1a1f3d' }}
-                    >
-                      {agent.humanName}
-                    </div>
-                    <div style={{ fontSize: 12, color: '#999' }}>
-                      {agent.humanRole}
+                  >
+                    &ldquo;
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-signifier, Georgia, serif)',
+                      fontSize: 16,
+                      fontStyle: 'italic',
+                      lineHeight: 1.65,
+                      color: '#333',
+                      flex: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      margin: 0,
+                    }}
+                  >
+                    {agent.testimonial}
+                  </p>
+                  <div
+                    style={{
+                      fontFamily: 'Georgia, serif',
+                      fontSize: 48,
+                      lineHeight: 1,
+                      color: '#ddd',
+                      textAlign: 'right',
+                      marginTop: 4,
+                      marginBottom: 12,
+                    }}
+                  >
+                    &rdquo;
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 12,
+                      marginTop: 8,
+                    }}
+                  >
+                    <img
+                      src={agent.humanImg}
+                      alt={agent.humanName}
+                      style={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#1a1f3d' }}>
+                        {agent.humanName}
+                      </div>
+                      <div style={{ fontSize: 12, color: '#999' }}>
+                        {agent.humanRole}
+                      </div>
                     </div>
                   </div>
-                </div>
-
                 </div>
               </div>,
             ])}
 
+            {/* BACK COVER */}
+            <div
+              style={{
+                background: '#1a1f3d',
                 width: 340,
                 height: 480,
                 display: 'flex',
@@ -383,48 +379,54 @@ export default function BookTestimonial() {
             </div>
           </HTMLFlipBook>
 
-          {/* Arrow controls — overlaid on the book spread, vertically centered */}
-          <div style={{ position: 'absolute', top: '50%', left: 0, right: 0, transform: 'translateY(-50%)', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32, pointerEvents: 'none', zIndex: 10 }}>
-        <button
-          onClick={() => book.current?.pageFlip()?.flipPrev()}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 8,
-            color: '#999',
-            fontSize: 24,
-            lineHeight: 1,
-            transition: 'color 0.2s',
-            pointerEvents: 'auto',
-            visibility: currentPage === 0 ? 'hidden' : 'visible',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
-          aria-label="Previous page"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => book.current?.pageFlip()?.flipNext()}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 8,
-            color: '#999',
-            fontSize: 24,
-            lineHeight: 1,
-            transition: 'color 0.2s',
-            pointerEvents: 'auto',
-            visibility: currentPage >= totalPages - 2 ? 'hidden' : 'visible',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
-          aria-label="Next page"
-        >
-          →
-        </button>
+          {/* Arrow controls — below the book */}
+          <div
+            style={{
+              marginTop: 28,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 32,
+            }}
+          >
+            <button
+              onClick={() => book.current?.pageFlip()?.flipPrev()}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 8,
+                color: '#999',
+                fontSize: 24,
+                lineHeight: 1,
+                transition: 'color 0.2s',
+                visibility: currentPage === 0 ? 'hidden' : 'visible',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+              aria-label="Previous page"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => book.current?.pageFlip()?.flipNext()}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 8,
+                color: '#999',
+                fontSize: 24,
+                lineHeight: 1,
+                transition: 'color 0.2s',
+                visibility: currentPage >= totalPages - 2 ? 'hidden' : 'visible',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#333')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#999')}
+              aria-label="Next page"
+            >
+              →
+            </button>
           </div>
         </div>
       </div>
