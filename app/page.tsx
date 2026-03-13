@@ -2,7 +2,6 @@ import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { HeroTypewriter } from "@/components/ui/hero-typewriter";
-import { UnicornIntro } from "@/components/ui/unicorn-intro";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -595,7 +594,6 @@ const REST_BEFORE_BENTO = BEFORE_BENTO.slice(heroEndIdx);
 export default function Home() {
   return (
     <>
-      <UnicornIntro />
       <HeroTypewriter />
       <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />
 
