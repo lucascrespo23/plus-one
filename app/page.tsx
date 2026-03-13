@@ -344,6 +344,15 @@ const AFTER_ROLES = `<!-- SECURITY -->
   </div>
 </section>
 
+<!-- CTA -->
+<section class="py-24">
+  <div class="section-max text-center max-w-3xl">
+    <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">One subscription. Everything you need.</h2>
+    <p class="text-secondary text-lg leading-relaxed mb-10">Plus One is included in Every's bundle. It's currently in invite-only beta access. Want a Plus One?</p>
+    <a href="#" class="cta-btn bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90 transition">Join the waitlist →</a>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="py-24">
   <div class="section-max max-w-3xl">
