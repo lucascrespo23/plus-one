@@ -142,7 +142,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', transform: currentPage >= totalPages - 1 ? 'translateX(170px)' : 'translateX(0)', transition: 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
