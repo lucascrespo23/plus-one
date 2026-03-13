@@ -196,7 +196,6 @@ export default function BookTestimonial() {
               /* Profile page (even after cover — LEFT side) */
               <div
                 key={`${agent.name}-profile`}
-                className="book-page-left"
                 style={{
                   background: '#FFFFFF',
                   width: 340,
@@ -206,6 +205,16 @@ export default function BookTestimonial() {
                   position: 'relative',
                 }}
               >
+                {/* Dashed spine divider — right edge, inside page */}
+                <div style={{
+                  position: 'absolute',
+                  top: '8%',
+                  bottom: '8%',
+                  right: 0,
+                  borderRight: '1px dashed #d0d0d0',
+                  pointerEvents: 'none',
+                  zIndex: 2,
+                }} />
                 <div style={{
                   padding: '48px 40px',
                   width: '100%',
@@ -265,7 +274,6 @@ export default function BookTestimonial() {
               /* Testimonial page (odd after cover — RIGHT side) */
               <div
                 key={`${agent.name}-testimonial`}
-                className="book-page-right"
                 style={{
                   background: '#FFFFFF',
                   width: 340,
@@ -275,6 +283,16 @@ export default function BookTestimonial() {
                   position: 'relative',
                 }}
               >
+                {/* Dashed spine divider — left edge, inside page */}
+                <div style={{
+                  position: 'absolute',
+                  top: '8%',
+                  bottom: '8%',
+                  left: 0,
+                  borderLeft: '1px dashed #d0d0d0',
+                  pointerEvents: 'none',
+                  zIndex: 2,
+                }} />
                 <div style={{
                   padding: '48px 40px',
                   width: '100%',

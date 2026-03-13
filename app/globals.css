@@ -158,10 +158,4 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item:last-child {
   background: #1a1f3d !important;
 }
-/* Dashed spine on left-side pages */
-.book-page-left {
-  border-right: 1px dashed #ccc !important;
-}
-.book-page-right {
-  border-left: 1px dashed #ccc !important;
-}
+/* no external divider — divider is inside page content */
