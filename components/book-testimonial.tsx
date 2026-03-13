@@ -115,17 +115,17 @@ export default function BookTestimonial() {
         style={{
           background: 'transparent',
           borderRadius: 16,
-          padding: '56px 64px',
+          padding: '56px 80px',
           width: '100%',
-          maxWidth: 1100,
+          maxWidth: 1200,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 72,
+          gap: 48,
         }}
       >
         {/* Left: Heading */}
-        <div style={{ flex: '0 0 42%' }}>
+        <div style={{ flex: '0 0 38%', paddingLeft: 0 }}>
           <h2
             className="text-4xl md:text-5xl font-light tracking-tight"
             style={{
@@ -191,16 +191,16 @@ export default function BookTestimonial() {
               />
             </div>
 
-            {/* AGENT PAGES — 2 pages per agent: front (profile) + back (testimonial) */}
+            {/* AGENT PAGES — 2 pages per agent: profile (LEFT) + testimonial (RIGHT) */}
             {agents.flatMap((agent, i) => [
-              /* Front page (odd page — right side): Agent profile card */
+              /* Profile page (even after cover — LEFT side) */
               <div
                 key={`${agent.name}-profile`}
                 style={{
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '40px 34px 28px',
+                  padding: '40px 36px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -261,14 +261,14 @@ export default function BookTestimonial() {
                 </div>
               </div>,
 
-              /* Back page (even page — left side): Testimonial */
+              /* Testimonial page (odd after cover — RIGHT side) */
               <div
                 key={`${agent.name}-testimonial`}
                 style={{
-                  background: '#FAFAF7',
+                  background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '40px 34px 28px',
+                  padding: '40px 36px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
