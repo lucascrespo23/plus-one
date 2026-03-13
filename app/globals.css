@@ -158,14 +158,15 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item:last-child {
   background: #1a1f3d !important;
 }
-/* Dashed divider between spread pages — on left-side pages */
-.stf__item.--left.--simple::after {
+/* Center spine divider for book spread */
+.stf__block::after {
   content: '';
   position: absolute;
   top: 10%;
   bottom: 10%;
-  right: 0;
-  border-right: 1px dashed #ccc;
-  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 1px dashed #ccc;
+  z-index: 20;
   pointer-events: none;
 }
