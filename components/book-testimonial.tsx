@@ -203,6 +203,7 @@ export default function BookTestimonial() {
                   boxSizing: 'border-box',
                   overflow: 'hidden',
                   position: 'relative',
+                  borderRight: '1px dashed #ccc',
                 }}
               >
                 <div style={{
