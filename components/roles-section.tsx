@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ROLES = [
@@ -20,8 +20,15 @@ const ROLES = [
 export default function RolesSection() {
   const [activeTab, setActiveTab] = useState(ROLES[0].id);
   const [isPaused, setIsPaused] = useState(false);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Auto-rotate every 4s
+  const pauseAndResume = useCallback(() => {
+    setIsPaused(true);
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => setIsPaused(false), 6000);
+  }, []);
+
+  // Auto-rotate every 5s, pause on hover/click
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -29,7 +36,7 @@ export default function RolesSection() {
         const idx = ROLES.findIndex(r => r.id === prev);
         return ROLES[(idx + 1) % ROLES.length].id;
       });
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -39,8 +46,8 @@ export default function RolesSection() {
     <section style={{ background: "#F3F2EE", padding: "100px 64px" }}>
       <div
         style={{ display: "flex", gap: "64px", alignItems: "flex-start" }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseEnter={() => { setIsPaused(true); if (resumeTimer.current) clearTimeout(resumeTimer.current); }}
+        onMouseLeave={() => { resumeTimer.current = setTimeout(() => setIsPaused(false), 6000); }}
       >
         {/* Left 50%: headline + subhead, sticky */}
         <div style={{ width: "50%", flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", paddingRight: "32px" }}>
@@ -73,7 +80,7 @@ export default function RolesSection() {
             {ROLES.map(role => (
               <button
                 key={role.id}
-                onClick={() => { setActiveTab(role.id); setIsPaused(true); setTimeout(() => setIsPaused(false), 6000); }}
+                onClick={() => { setActiveTab(role.id); pauseAndResume(); }}
                 style={{
                   position: "relative",
                   padding: "8px 18px",
