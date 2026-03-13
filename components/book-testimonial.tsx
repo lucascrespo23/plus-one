@@ -162,7 +162,7 @@ export default function BookTestimonial() {
 
         {/* Right: Book */}
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-          {/* Made by Every stamp — appears on the right side when back cover is showing */}
+          {/* Made by Every stamp — instantly appears on back cover, no transition */}
           <img
             src="/img/made-by-every.jpg"
             alt="Made by Every"
@@ -173,9 +173,9 @@ export default function BookTestimonial() {
               transform: 'translateY(-50%)',
               width: 200,
               opacity: currentPage >= totalPages - 2 ? 0.85 : 0,
+              visibility: currentPage >= totalPages - 2 ? 'visible' : 'hidden',
               zIndex: 10,
               pointerEvents: 'none',
-              transition: 'opacity 0.8s ease',
             }}
           />
           {/* @ts-ignore */}
