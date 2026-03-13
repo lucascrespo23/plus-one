@@ -1,23 +1,38 @@
-'use client';
-
 import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { HeroTypewriter } from "@/components/ui/hero-typewriter";
 import BookTestimonial from "@/components/book-testimonial";
-import { LanguageProvider, useLanguage } from "@/components/language-provider";
-import { LanguageToggle } from "@/components/language-toggle";
-import { translations } from "@/lib/translations";
-import { 
-  HERO_HTML_ES, 
-  HERO_HTML_EN, 
-  REST_BEFORE_BENTO_ES, 
-  REST_BEFORE_BENTO_EN,
-  AFTER_ROLES_ES,
-  AFTER_ROLES_EN
-} from "@/lib/html-content";
 
-const MARQUEE_HTML = `
+const BEFORE_BENTO = `<!-- HERO (no nav) -->
+<section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-fade"></div>
+
+  <div class="section-max relative z-10 text-center">
+    <div class="inline-flex items-center gap-2 bg-[#1A1A1A]/5 border border-[#1A1A1A]/10 rounded-full px-4 py-1.5 mb-6">
+      <span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#22963B;box-shadow:0 0 4px 1.5px rgba(34,150,59,0.5);margin-right:6px;vertical-align:middle"></span><span class="text-[#1A1A1A]/50 text-xs font-medium">Powered by OpenClaw</span>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="mb-8" style="text-align:center;">
+      <img src="img/hero.png" alt="Plus One hero illustration" style="max-width:416px; width:52%; margin:0 auto; display:block;">
+    </div>
+
+    <h1 id="hero-headline" class="text-4xl md:text-7xl font-medium text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight">
+      Promote yourself with a <span style="background: linear-gradient(to right, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3, #e8d490, #d4a9c4, #a8c4d4, #b8d4a3); background-size: 400% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-shift 6s linear infinite;">+1</span>
+    </h1>
+
+    <p class="text-[#1A1A1A]/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+      Get your own OpenClaw with 1-click, launched on a secure server run by Every and powered with out-of-the-box skills, preferences, and connections to our apps.
+    </p>
+
+    <a href="#pricing" class="cta-btn gap-2 bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90 transition">
+      Name your Plus One →
+    </a>
+
+  </div><!-- close section-max -->
 
   <!-- Slack marquee removed, now in ContainerScroll -->
   <div class="mt-16" style="display:none">

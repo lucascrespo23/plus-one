@@ -1,32 +1,23 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { roleTranslations, translations } from "@/lib/translations";
 
-const ROLE_IDS = [
-  { id: "founders", image: "/img/role-founders.jpg" },
-  { id: "editors", image: "/img/role-editors.jpg" },
-  { id: "growth", image: "/img/role-growth.jpg" },
-  { id: "support", image: "/img/role-support.jpg" },
-  { id: "engineers", image: "/img/role-engineers.jpg" },
-  { id: "sales", image: "/img/role-sales.jpg" },
-  { id: "creators", image: "/img/role-creators.jpg" },
-  { id: "finance", image: "/img/role-finance.jpg" },
-  { id: "design", image: "/img/role-design.jpg" },
-  { id: "product", image: "/img/role-product.jpg" },
-  { id: "research", image: "/img/role-research.jpg" },
-  { id: "operations", image: "/img/role-operations.jpg" },
+const ROLES: { id: string; label: string; title: string; bullets: string[]; image?: string }[] = [
+  { id: "founders", label: "Founders", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"], image: "/img/role-founders.jpg" },
+  { id: "editors", label: "Editors & Content", title: "Editors & Content", image: "/img/role-editors.jpg", bullets: ["Draft and edit articles", "Style consistency checks", "Publishing workflows", "Content calendar management"] },
+  { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"], image: "/img/role-growth.jpg" },
+  { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"], image: "/img/role-support.jpg" },
+  { id: "engineers", label: "Engineers", title: "Engineers", bullets: ["Code review & PRs", "Bug triage & fixes", "Documentation", "Prototype & MVP builds"], image: "/img/role-engineers.jpg" },
+  { id: "sales", label: "Sales", title: "Sales", bullets: ["Lead qualification", "CRM management", "Follow-up sequences", "Pipeline reporting"], image: "/img/role-sales.jpg" },
+  { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"], image: "/img/role-creators.jpg" },
+  { id: "finance", label: "Finance", title: "Finance", image: "/img/role-finance.jpg", bullets: ["Revenue tracking", "Expense categorization", "Financial reporting", "Forecasting & modeling"] },
+  { id: "design", label: "Design", title: "Design", image: "/img/role-design.jpg", bullets: ["Design iteration & feedback", "Asset management", "Prototyping", "Design system docs"] },
+  { id: "product", label: "Product Managers", title: "Product Managers", image: "/img/role-product.jpg", bullets: ["Feature spec writing", "User feedback tracking", "Sprint planning", "Roadmap updates"] },
+  { id: "research", label: "Research & Analysis", title: "Research & Analysis", image: "/img/role-research.jpg", bullets: ["Data collection & cleaning", "Trend analysis", "Report generation", "Market research"] },
+  { id: "operations", label: "Operations", title: "Operations", image: "/img/role-operations.jpg", bullets: ["Process automation", "Tool migrations", "Vendor coordination", "Workflow optimization"] },
 ];
 
-interface RolesSectionProps {
-  lang: 'es' | 'en';
-}
-
-export default function RolesSection({ lang }: RolesSectionProps) {
-  const ROLES = ROLE_IDS.map(role => ({
-    ...role,
-    ...roleTranslations[lang][role.id]
-  }));
+export default function RolesSection() {
   const [activeTab, setActiveTab] = useState(ROLES[0].id);
   const [isPaused, setIsPaused] = useState(false);
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -77,7 +68,7 @@ export default function RolesSection({ lang }: RolesSectionProps) {
             letterSpacing: "-0.03em",
             lineHeight: "1.15",
           }}>
-            {translations[lang].rolesSectionTitle}
+            A +1 for every style of work
           </h2>
           <p style={{
             color: "rgba(26,26,26,0.5)",
