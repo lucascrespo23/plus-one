@@ -169,7 +169,7 @@ export default function BookTestimonial() {
             swipeDistance={30}
             showPageCorners={true}
             disableFlipByClick={false}
-            onFlip={(e: any) => setCurrentPage(e.data)}
+            onFlip={(e: any) => { console.log('FLIP PAGE:', e.data); setCurrentPage(e.data); }}
           >
             {/* COVER (page 0) */}
             <div
@@ -355,27 +355,19 @@ export default function BookTestimonial() {
                 background: '#1a1f3d',
                 width: 340,
                 height: 480,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
                 borderRadius: '0 8px 8px 0',
+                overflow: 'hidden',
               }}
             >
-              <h2
+              <img
+                src="/img/passport-back.jpg"
+                alt="Made by Every"
                 style={{
-                  fontFamily: 'var(--font-signifier, Georgia, serif)',
-                  fontSize: 28,
-                  color: '#F5F3EE',
-                  fontWeight: 300,
-                  letterSpacing: 4,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
                 }}
-              >
-                PLUS ONE
-              </h2>
-              <p style={{ fontSize: 14, color: '#8888aa', marginTop: 8 }}>
-                every.to
-              </p>
+              />
             </div>
           </HTMLFlipBook>
 
