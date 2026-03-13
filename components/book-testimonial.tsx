@@ -113,7 +113,7 @@ export default function BookTestimonial() {
     >
       <div
         style={{
-          background: '#E8E6E0',
+          background: 'transparent',
           borderRadius: 16,
           padding: '56px 64px',
           width: '100%',
