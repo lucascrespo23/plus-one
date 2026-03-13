@@ -151,7 +151,7 @@ const BEFORE_BENTO = `<!-- HERO (no nav) -->
 </section>
 
 <!-- THE OPPORTUNITY -->
-<section style="padding-top:60px;padding-bottom:160px">
+<section style="padding-top:60px;padding-bottom:240px">
   <div class="section-max text-center">
     <h2 class="text-4xl md:text-6xl font-medium tracking-tight mb-6">Do 10x the work,<br>10x as fast, 10x as fun</h2>
     <p class="text-secondary text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
