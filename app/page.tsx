@@ -518,7 +518,9 @@ export default function Home() {
         <p style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "18px", color: "rgba(26,26,26,0.5)", margin: "0 0 48px 0", textAlign: "center" }}>
           Seven capabilities that make your +1 indispensable.
         </p>
-        <Bucket />
+        <div style={{ marginTop: "60px" }}>
+          <Bucket />
+        </div>
       </section>
 
       <RolesTabs />

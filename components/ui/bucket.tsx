@@ -28,7 +28,7 @@ export default function Bucket() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center h-fit relative w-full">
+    <div className="flex flex-col gap-4 items-center justify-center h-fit relative w-full" style={{ overflow: "hidden", paddingTop: "80px" }}>
       <div
         className="relative isolate w-full max-w-[655px]"
         style={{ aspectRatio: "655/352" }}
