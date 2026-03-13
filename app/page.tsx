@@ -476,34 +476,7 @@ const AFTER_ROLES = `<!-- PRICING -->
     <a href="#pricing" class="cta-btn bg-white text-[#1A1A1A] hover:bg-white/90 transition">Promote yourself</a>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="bg-[#1A1A1A] text-white py-16">
-  <div class="section-max">
-    <div class="grid md:grid-cols-4 gap-12 mb-12">
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-7 h-7 rounded-lg flex items-center justify-center text-white text-sm font-bold" style="background:linear-gradient(135deg,#8c38fa,#2253CE)">+1</div>
-          <span class="font-semibold">Plus One by Every</span>
-        </div>
-        <p class="text-white/50 text-sm">Your AI coworker, powered by OpenClaw.</p>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold mb-4 text-white/70">Platform</h4>
-        <div class="space-y-2 text-sm text-white/50"><a href="#" class="block hover:text-white transition">Proof</a><a href="#" class="block hover:text-white transition">Sparkle</a><a href="#" class="block hover:text-white transition">Spiral</a><a href="#" class="block hover:text-white transition">Cora</a><a href="#" class="block hover:text-white transition">Para</a></div>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold mb-4 text-white/70">Resources</h4>
-        <div class="space-y-2 text-sm text-white/50"><a href="#" class="block hover:text-white transition">Documentation</a><a href="#" class="block hover:text-white transition">Blog</a><a href="#" class="block hover:text-white transition">Changelog</a></div>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold mb-4 text-white/70">Company</h4>
-        <div class="space-y-2 text-sm text-white/50"><a href="#" class="block hover:text-white transition">About Every</a><a href="#" class="block hover:text-white transition">Careers</a><a href="#" class="block hover:text-white transition">Privacy</a><a href="#" class="block hover:text-white transition">Terms</a></div>
-      </div>
-    </div>
-    <div class="border-t border-white/10 pt-8 text-center text-white/30 text-sm">© 2026 Every, Inc. All rights reserved.</div>
-  </div>
-</footer>`;
+`;
 
 const MARQUEE_HTML = `
       <div class="overflow-hidden mb-4 marquee-mask">
