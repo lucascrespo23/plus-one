@@ -148,9 +148,9 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
   .roles-card-right{width:100%;height:200px}
 }
 
-/* react-pageflip: solid backgrounds on both sides of pages */
+/* react-pageflip page styles */
 .stf__item {
-  background: transparent !important;
+  background: #FFFFFF !important;
 }
 .stf__item:first-child {
   background: #1a1f3d !important;
@@ -158,7 +158,7 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
 .stf__item:last-child {
   background: #1a1f3d !important;
 }
-/* Book spine crease shadow — inset shadow on spine edge of each page */
+/* Book spine crease shadow */
 .stf__item.--left {
   box-shadow: inset -20px 0 20px -12px rgba(0,0,0,0.12);
 }
@@ -169,5 +169,18 @@ details .faq-answer { overflow: hidden; animation: slideDown 0.3s ease; color: #
   filter: drop-shadow(0 8px 32px rgba(0,0,0,0.12));
   position: relative;
   z-index: 2 !important;
+}
+/* Hide the empty right-page slot on the back cover spread.
+   The library creates an extra .stf__item for the empty spread slot.
+   Target it by making any stf__item with no children transparent. */
+.stf__item:empty {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* Also force via nth-last-child in case :empty doesn't match */
+.stf__item:nth-child(15),
+.stf__item:nth-child(16) {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 /* cache-bust-v3 */

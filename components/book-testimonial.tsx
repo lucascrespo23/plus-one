@@ -148,12 +148,12 @@ export default function BookTestimonial() {
             alt="Made by Every"
             style={{
               position: 'absolute',
-              right: -60,
-              top: '55%',
+              right: 40,
+              top: '50%',
               transform: 'translateY(-50%)',
-              width: 180,
+              width: 200,
               opacity: 0.85,
-              zIndex: 0,
+              zIndex: 1,
               pointerEvents: 'none',
             }}
           />
