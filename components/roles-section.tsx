@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const ROLES: { id: string; label: string; title: string; bullets: string[]; image?: string }[] = [
   { id: "founders", label: "Founders & Operators", title: "Founders & Operators", bullets: ["Strategic planning & analysis", "Cross-team coordination", "Investor updates & reporting", "Hiring pipeline management"], image: "/img/role-founders.jpg" },
   { id: "editors", label: "Editors & Content", title: "Editors & Content", bullets: ["Draft and edit articles", "Style consistency checks", "Publishing workflows", "Content calendar management"] },
-  { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"] },
+  { id: "growth", label: "Growth & Marketing", title: "Growth & Marketing", bullets: ["Campaign management", "Analytics & reporting", "A/B test analysis", "Social media scheduling"], image: "/img/role-growth.jpg" },
   { id: "support", label: "Customer Support", title: "Customer Support", bullets: ["Ticket triage & response", "Knowledge base updates", "Escalation management", "Customer health monitoring"] },
   { id: "engineers", label: "Engineers", title: "Engineers", bullets: ["Code review & PRs", "Bug triage & fixes", "Documentation", "Prototype & MVP builds"] },
   { id: "creators", label: "Content Creators", title: "Content Creators", bullets: ["Script writing & editing", "Research & fact-checking", "Distribution workflows", "Audience analytics"] },
