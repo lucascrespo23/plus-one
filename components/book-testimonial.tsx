@@ -120,11 +120,12 @@ export default function BookTestimonial() {
           maxWidth: 1100,
           display: 'flex',
           alignItems: 'center',
-          gap: 48,
+          justifyContent: 'space-between',
+          gap: 72,
         }}
       >
         {/* Left: Heading */}
-        <div style={{ flex: '0 0 36%' }}>
+        <div style={{ flex: '0 0 42%' }}>
           <h2
             className="text-4xl md:text-5xl font-light tracking-tight"
             style={{
@@ -132,6 +133,7 @@ export default function BookTestimonial() {
               textAlign: 'left',
               lineHeight: 1.15,
               margin: 0,
+              fontSize: 'clamp(2.25rem, 3.2vw, 3.2rem)',
             }}
           >
             Every human deserves a Plus One
@@ -139,7 +141,7 @@ export default function BookTestimonial() {
         </div>
 
         {/* Right: Book */}
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+        <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'flex-end' }}>
           {/* @ts-ignore */}
           <HTMLFlipBook
             ref={book}
@@ -167,7 +169,7 @@ export default function BookTestimonial() {
             showPageCorners={true}
             disableFlipByClick={false}
           >
-            {/* COVER */}
+            {/* COVER (page 0) */}
             <div
               className="relative overflow-hidden"
               style={{
@@ -189,132 +191,162 @@ export default function BookTestimonial() {
               />
             </div>
 
-            {/* AGENT PAGES */}
-            {agents.map((agent, i) => (
+            {/* AGENT PAGES — 2 pages per agent: front (profile) + back (testimonial) */}
+            {agents.flatMap((agent, i) => [
+              /* Front page (odd page — right side): Agent profile card */
               <div
-                key={agent.name}
+                key={`${agent.name}-profile`}
                 style={{
                   background: '#FFFFFF',
                   width: 340,
                   height: 480,
-                  padding: '32px 26px 20px',
+                  padding: '40px 34px 28px',
                   display: 'flex',
                   flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
                   position: 'relative',
                 }}
               >
-                {/* Top section */}
+                <img
+                  src={agent.img}
+                  alt={agent.name}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    marginBottom: 20,
+                    border: '3px solid #eee',
+                  }}
+                />
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-signifier, Georgia, serif)',
+                    fontSize: 28,
+                    fontWeight: 400,
+                    color: '#1a1f3d',
+                    margin: 0,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {agent.name}
+                </h3>
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: '#666',
+                    marginTop: 10,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Reports to <strong>{agent.reportsTo}</strong>, {agent.role}
+                </p>
+                <p style={{ fontSize: 13, color: '#999', marginTop: 6 }}>
+                  Works with {agent.worksWith}
+                </p>
+
+                {/* Page number */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 14,
+                    right: 20,
+                    fontSize: 11,
+                    color: '#ccc',
+                  }}
+                >
+                  {i * 2 + 1}
+                </div>
+              </div>,
+
+              /* Back page (even page — left side): Testimonial */
+              <div
+                key={`${agent.name}-testimonial`}
+                style={{
+                  background: '#FAFAF7',
+                  width: 340,
+                  height: 480,
+                  padding: '40px 34px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  position: 'relative',
+                }}
+              >
+                {/* Decorative quote mark */}
+                <div
+                  style={{
+                    fontFamily: 'Georgia, serif',
+                    fontSize: 72,
+                    lineHeight: 1,
+                    color: '#ddd',
+                    marginBottom: -12,
+                    marginTop: -20,
+                  }}
+                >
+                  &ldquo;
+                </div>
+
+                {/* Testimonial text */}
+                <p
+                  style={{
+                    fontFamily: 'var(--font-signifier, Georgia, serif)',
+                    fontSize: 17,
+                    fontStyle: 'italic',
+                    lineHeight: 1.7,
+                    color: '#333',
+                    flex: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  {agent.testimonial}
+                </p>
+
+                {/* Closing quote */}
+                <div
+                  style={{
+                    fontFamily: 'Georgia, serif',
+                    fontSize: 72,
+                    lineHeight: 1,
+                    color: '#ddd',
+                    textAlign: 'right',
+                    marginTop: -16,
+                    marginBottom: 8,
+                  }}
+                >
+                  &rdquo;
+                </div>
+
+                {/* Human attribution */}
                 <div
                   style={{
                     display: 'flex',
-                    flexDirection: 'column',
                     alignItems: 'center',
-                    textAlign: 'center',
+                    gap: 12,
+                    marginTop: 8,
                   }}
                 >
                   <img
-                    src={agent.img}
-                    alt={agent.name}
+                    src={agent.humanImg}
+                    alt={agent.humanName}
                     style={{
-                      width: 88,
-                      height: 88,
+                      width: 40,
+                      height: 40,
                       borderRadius: '50%',
                       objectFit: 'cover',
-                      marginBottom: 12,
-                      border: '3px solid #eee',
                     }}
                   />
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-signifier, Georgia, serif)',
-                      fontSize: 26,
-                      fontWeight: 400,
-                      color: '#1a1f3d',
-                      margin: 0,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {agent.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      color: '#666',
-                      marginTop: 6,
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    Reports to <strong>{agent.reportsTo}</strong>, {agent.role}
-                  </p>
-                  <p style={{ fontSize: 12, color: '#999', marginTop: 2 }}>
-                    Works with {agent.worksWith}
-                  </p>
-                </div>
-
-                {/* Divider */}
-                <div
-                  style={{
-                    width: '100%',
-                    height: 1,
-                    background: '#e0ddd5',
-                    margin: '18px 0',
-                  }}
-                />
-
-                {/* Testimonial */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div
-                    style={{
-                      fontFamily: 'Georgia, serif',
-                      fontSize: 36,
-                      lineHeight: 1,
-                      color: '#ccc',
-                      marginBottom: -4,
-                    }}
-                  >
-                    &ldquo;
-                  </div>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-signifier, Georgia, serif)',
-                      fontSize: 15,
-                      fontStyle: 'italic',
-                      lineHeight: 1.6,
-                      color: '#333',
-                      flex: 1,
-                    }}
-                  >
-                    {agent.testimonial}
-                  </p>
-
-                  {/* Human attribution */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 10,
-                      marginTop: 12,
-                    }}
-                  >
-                    <img
-                      src={agent.humanImg}
-                      alt={agent.humanName}
-                      style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                      }}
-                    />
-                    <div>
-                      <div
-                        style={{ fontSize: 13, fontWeight: 600, color: '#1a1f3d' }}
-                      >
-                        {agent.humanName}
-                      </div>
-                      <div style={{ fontSize: 11, color: '#999' }}>
-                        {agent.humanRole}
-                      </div>
+                  <div>
+                    <div
+                      style={{ fontSize: 14, fontWeight: 600, color: '#1a1f3d' }}
+                    >
+                      {agent.humanName}
+                    </div>
+                    <div style={{ fontSize: 12, color: '#999' }}>
+                      {agent.humanRole}
                     </div>
                   </div>
                 </div>
@@ -323,16 +355,16 @@ export default function BookTestimonial() {
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: 12,
-                    right: 18,
+                    bottom: 14,
+                    left: 20,
                     fontSize: 11,
                     color: '#ccc',
                   }}
                 >
-                  {i + 1}
+                  {i * 2 + 2}
                 </div>
-              </div>
-            ))}
+              </div>,
+            ])}
 
             {/* BACK COVER */}
             <div
