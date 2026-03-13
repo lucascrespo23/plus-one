@@ -29,34 +29,827 @@ export default function Bucket() {
 
   return (
     <div className="flex flex-col gap-4 items-center justify-center h-fit relative w-full">
-      <div className="relative isolate w-full max-w-[655px]" style={{ aspectRatio: "655/352" }}>
-        <svg width="100%" height="100%" viewBox="0 0 655 352" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 z-0">
-          <path d="M127 80 C127 60, 147 45, 167 45 L488 45 C508 45, 528 60, 528 80 L508 290 C505 310, 490 320, 470 320 L185 320 C165 320, 150 310, 147 290 Z" stroke="#E0DDD8" strokeWidth="1.5" fill="#FAFAF7"/>
-          <path d="M155 75 L500 75" stroke="#E0DDD8" strokeWidth="0.5" opacity="0.5"/>
-          <path d="M90 48 C90 28, 120 15, 150 15 L505 15 C535 15, 565 28, 565 48 L545 80 C540 90, 520 95, 500 95 L155 95 C135 95, 115 90, 110 80 Z" stroke="#D5D2CC" strokeWidth="1.5" fill="#F5F3EE"/>
-          <rect x="280" y="318" width="95" height="34" rx="17" stroke="#E0DDD8" strokeWidth="1.5" fill="#FAFAF7"/>
+      <div
+        className="relative isolate w-full max-w-[655px]"
+        style={{ aspectRatio: "655/352" }}
+      >
+        {/* Background SVG - the bucket body with glass effects */}
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 655 352"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 z-0"
+        >
+          <foreignObject
+            x="443.561"
+            y="-10.5141"
+            width="211.24"
+            height="166.977"
+          >
+            <div
+              style={{
+                backdropFilter: "blur(11.03px)",
+                clipPath: "url(#bgblur_0_51_65_clip_path)",
+                height: "100%",
+                width: "100%",
+              }}
+            ></div>
+          </foreignObject>
+          <g
+            filter="url(#filter1_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M535.59 78.7427L487.973 42.8776L558.738 13.9516C562.902 12.2494 564.984 11.3984 567.143 11.5597C569.301 11.7211 571.233 12.8723 575.098 15.1747L590.22 24.1832C603.923 32.347 610.775 36.4289 610.372 42.0779C609.97 47.7269 602.609 50.7964 587.887 56.9354L535.59 78.7427Z"
+              fill="white"
+              fillOpacity="0.42"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <foreignObject
+            x="-3.43323e-05"
+            y="-10.9516"
+            width="215.96"
+            height="167.786"
+          >
+            <div
+              style={{
+                backdropFilter: "blur(11.03px)",
+                clipPath: "url(#bgblur_1_51_65_clip_path)",
+                height: "100%",
+                width: "100%",
+              }}
+            ></div>
+          </foreignObject>
+          <g
+            filter="url(#filter2_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M123.116 79.1145L171.548 42.8776L97.2715 12.5164C94.8305 11.5186 93.61 11.0197 92.3446 11.1143C91.0793 11.2089 89.9465 11.8837 87.681 13.2334L56.155 32.0149C48.1832 36.7641 44.1973 39.1386 44.4205 42.4378C44.6438 45.737 48.9132 47.553 57.4522 51.1849L123.116 79.1145Z"
+              fill="white"
+              fillOpacity="0.42"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <foreignObject
+            x="78.7048"
+            y="20.823"
+            width="501.297"
+            height="136.012"
+          >
+            <div
+              style={{
+                backdropFilter: "blur(11.03px)",
+                clipPath: "url(#bgblur_2_51_65_clip_path)",
+                height: "100%",
+                width: "100%",
+              }}
+            ></div>
+          </foreignObject>
+          <g
+            filter="url(#filter3_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M487.973 42.8774L171.548 42.8775L123.116 79.1144L535.59 78.7424L487.973 42.8774Z"
+              fill="url(#paint0_linear_51_65)"
+              fillOpacity="0.72"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <foreignObject
+            x="78.7048"
+            y="20.823"
+            width="137.255"
+            height="136.012"
+          >
+            <div
+              style={{
+                backdropFilter: "blur(11.03px)",
+                clipPath: "url(#bgblur_3_51_65_clip_path)",
+                height: "100%",
+                width: "100%",
+              }}
+            ></div>
+          </foreignObject>
+          <g
+            filter="url(#filter4_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M171.548 78.9088V42.8774L123.116 79.1144L171.548 78.9088Z"
+              fill="white"
+              fillOpacity="0.32"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <g
+            filter="url(#filter5_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M487.973 78.9088V42.8774L536.404 79.1144L487.973 78.9088Z"
+              fill="white"
+              fillOpacity="0.32"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_i_51_65"
+              x="123.766"
+              y="79.1595"
+              width="413"
+              height="275.676"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect1_innerShadow_51_65"
+              />
+            </filter>
+            <filter
+              id="filter1_dddi_51_65"
+              x="443.561"
+              y="-10.5141"
+              width="211.24"
+              height="166.977"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <clipPath
+              id="bgblur_0_51_65_clip_path"
+              transform="translate(-443.561 10.5141)"
+            >
+              <path d="M535.59 78.7427L487.973 42.8776L558.738 13.9516C562.902 12.2494 564.984 11.3984 567.143 11.5597C569.301 11.7211 571.233 12.8723 575.098 15.1747L590.22 24.1832C603.923 32.347 610.775 36.4289 610.372 42.0779C609.97 47.7269 602.609 50.7964 587.887 56.9354L535.59 78.7427Z" />
+            </clipPath>
+            <filter
+              id="filter2_dddi_51_65"
+              x="-3.43323e-05"
+              y="-10.9516"
+              width="215.96"
+              height="167.786"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <clipPath
+              id="bgblur_1_51_65_clip_path"
+              transform="translate(3.43323e-05 10.9516)"
+            >
+              <path d="M123.116 79.1145L171.548 42.8776L97.2715 12.5164C94.8305 11.5186 93.61 11.0197 92.3446 11.1143C91.0793 11.2089 89.9465 11.8837 87.681 13.2334L56.155 32.0149C48.1832 36.7641 44.1973 39.1386 44.4205 42.4378C44.6438 45.737 48.9132 47.553 57.4522 51.1849L123.116 79.1145Z" />
+            </clipPath>
+            <filter
+              id="filter3_dddi_51_65"
+              x="78.7048"
+              y="20.823"
+              width="501.297"
+              height="136.012"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <clipPath
+              id="bgblur_2_51_65_clip_path"
+              transform="translate(-78.7048 -20.823)"
+            >
+              <path d="M487.973 42.8774L171.548 42.8775L123.116 79.1144L535.59 78.7424L487.973 42.8774Z" />
+            </clipPath>
+            <filter
+              id="filter4_dddi_51_65"
+              x="78.7048"
+              y="20.823"
+              width="137.255"
+              height="136.012"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <clipPath
+              id="bgblur_3_51_65_clip_path"
+              transform="translate(-78.7048 -20.823)"
+            >
+              <path d="M171.548 78.9088V42.8774L123.116 79.1144L171.548 78.9088Z" />
+            </clipPath>
+            <filter
+              id="filter5_dddi_51_65"
+              x="443.561"
+              y="20.823"
+              width="137.255"
+              height="136.012"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <filter
+              id="filter6_dddi_51_65"
+              x="21.477"
+              y="56.6875"
+              width="612.444"
+              height="212.562"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="33.3087" />
+              <feGaussianBlur stdDeviation="22.2058" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="1.27808" />
+              <feGaussianBlur stdDeviation="1.27808" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_51_65"
+                result="effect2_dropShadow_51_65"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="8.94656" />
+              <feGaussianBlur stdDeviation="4.47328" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0.0431373 0 0 0 0 0.12549 0 0 0 0 0.403922 0 0 0 0.05 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_51_65"
+                result="effect3_dropShadow_51_65"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_51_65"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="5.51362" />
+              <feGaussianBlur stdDeviation="1.83787" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect4_innerShadow_51_65"
+              />
+            </filter>
+            <clipPath id="bgblur_5_51_65_clip_path">
+              <path d="M74.6011 164.033L123.116 79.1138L535.59 78.7419L581.532 164.469C588.006 176.55 591.243 182.59 588.568 187.06C585.892 191.529 579.039 191.529 565.333 191.529H90.5591C76.4759 191.529 69.4343 191.529 66.7781 186.953C64.1219 182.376 67.615 176.262 74.6011 164.033Z" />
+            </clipPath>
+            <clipPath id="center_box_clip">
+              <rect x="123.766" y="0" width="413" height="352" />
+            </clipPath>
+            <linearGradient
+              id="paint0_linear_51_65"
+              x1="329.353"
+              y1="42.8774"
+              x2="329.353"
+              y2="79.1144"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" stopOpacity="0.4" />
+              <stop offset="1" stopColor="white" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
         </svg>
 
+        {/* Animated chip content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <div className="relative w-full h-full flex justify-center items-center" style={{ paddingBottom: "65%" }}>
+          <div
+            className="relative w-full h-full flex justify-center items-center"
+            style={{ paddingBottom: "65%" }}
+          >
             <AnimatePresence mode="popLayout">
               {items.map((chip, index) => {
                 if (index !== 0) return null;
                 return (
                   <motion.div
                     key={chip.id}
-                    initial={{ y: isMobile ? -70 : -100, opacity: 0, scale: 0.8 }}
+                    initial={{
+                      y: isMobile ? -70 : -100,
+                      opacity: 0,
+                      scale: 0.8,
+                      transition: {
+                        duration: 2,
+                        delay: 0.5,
+                        ease: [0.455, 0.03, 0.515, 0.955],
+                      },
+                    }}
                     animate={{ y: 0, opacity: 1, scale: isMobile ? 1 : 1.25 }}
-                    exit={{ y: isMobile ? 100 : 130, scale: 0.8, transition: { duration: 0.8 } }}
-                    transition={{ duration: 0.5, ease: [0.455, 0.03, 0.515, 0.955] }}
+                    exit={{
+                      y: isMobile ? 100 : 130,
+                      scale: 0.8,
+                      transition: { duration: 0.8 },
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.455, 0.03, 0.515, 0.955],
+                    }}
                     className="bg-white border border-[#E5E5E0] z-10 rounded-full p-2 w-[280px] shadow-sm absolute pointer-events-auto flex items-center gap-2 origin-bottom"
                   >
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#F5F3EE] text-[#666]">
                       <span className="text-lg">{chip.icon}</span>
                     </div>
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-sm font-semibold text-[#1A1A1A] leading-none font-['Switzer']">{chip.title}</span>
-                      <span className="text-xs text-[#999] font-['Switzer']">{chip.description}</span>
+                      <span className="text-sm font-semibold text-[#1A1A1A] leading-none font-['Switzer']">
+                        {chip.title}
+                      </span>
+                      <span className="text-xs text-[#999] font-['Switzer']">
+                        {chip.description}
+                      </span>
                     </div>
                   </motion.div>
                 );
@@ -65,10 +858,48 @@ export default function Bucket() {
           </div>
         </div>
 
-        <svg width="100%" height="100%" viewBox="0 0 655 352" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 z-20 pointer-events-none overflow-hidden" style={{ transform: "translate3d(0, 0, 0)" }}>
-          <path d="M90 48 C90 28, 120 15, 150 15 L505 15 C535 15, 565 28, 565 48 L545 80 C540 90, 520 95, 500 95 L155 95 C135 95, 115 90, 110 80 Z" stroke="#D5D2CC" strokeWidth="1.5" fill="#F5F3EE"/>
-          <rect x="280" y="318" width="95" height="34" rx="17" stroke="#E0DDD8" strokeWidth="1.5" fill="#FAFAF7"/>
-          <rect x="260" y="300" width="135" height="20" rx="4" fill="#FAFAF7"/>
+        {/* Foreground SVG - the top rim overlay with glass blur */}
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 655 352"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
+          style={{ transform: "translate3d(0, 0, 0)" }}
+        >
+          <g filter="url(#filter0_i_51_65)">
+            <path
+              d="M512.766 79.1595L147.766 79.1624C136.453 79.1625 130.796 79.1626 127.281 82.6773C123.766 86.192 123.766 91.8488 123.766 103.162V327.159C123.766 338.473 123.766 344.13 127.281 347.645C130.796 351.159 136.453 351.159 147.766 351.159H512.766C524.08 351.159 529.737 351.159 533.252 347.645C536.766 344.13 536.766 338.473 536.766 327.159V103.159C536.766 91.8457 536.766 86.1888 533.252 82.6741C529.737 79.1594 524.08 79.1594 512.766 79.1595Z"
+              fill="white"
+            />
+          </g>
+          <g clipPath="url(#center_box_clip)">
+            <foreignObject x="0" y="0" width="655" height="352">
+              <div
+                style={{
+                  backdropFilter: "blur(60.03px)",
+                  WebkitBackdropFilter: "blur(60.03px)",
+                  height: "100%",
+                  width: "100%",
+                  background: "rgba(255, 255, 255, 0.01)",
+                  clipPath:
+                    "path('M74.6011 164.033L123.116 79.1138L535.59 78.7419L581.532 164.469C588.006 176.55 591.243 182.59 588.568 187.06C585.892 191.529 579.039 191.529 565.333 191.529H90.5591C76.4759 191.529 69.4343 191.529 66.7781 186.953C64.1219 182.376 67.615 176.262 74.6011 164.033Z')",
+                }}
+              ></div>
+            </foreignObject>
+          </g>
+          <g
+            filter="url(#filter6_dddi_51_65)"
+            data-figma-bg-blur-radius="22.0545"
+          >
+            <path
+              d="M74.6011 164.033L123.116 79.1138L535.59 78.7419L581.532 164.469C588.006 176.55 591.243 182.59 588.568 187.06C585.892 191.529 579.039 191.529 565.333 191.529H90.5591C76.4759 191.529 69.4343 191.529 66.7781 186.953C64.1219 182.376 67.615 176.262 74.6011 164.033Z"
+              fill="white"
+              fillOpacity="0.42"
+              shapeRendering="crispEdges"
+            />
+          </g>
         </svg>
       </div>
     </div>
