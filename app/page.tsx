@@ -598,7 +598,7 @@ export default function Home() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </button>
         </div>
-        <img src="/img/every-logo.jpg" alt="Every" style={{ height: "24px" }} />
+        <img src="/img/every-logo.jpg" alt="Every" style={{ height: "24px", mixBlendMode: "multiply" }} />
         <div style={{ display: "flex", alignItems: "center", gap: "16px", justifySelf: "end" }}>
           <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", color: "#1A1A1A", textDecoration: "none" }}>Sign In</a>
           <a href="#" style={{ fontFamily: "'Switzer', system-ui, sans-serif", fontSize: "14px", background: "#1A1A1A", color: "white", padding: "8px 20px", borderRadius: "999px", textDecoration: "none" }}>Subscribe</a>
