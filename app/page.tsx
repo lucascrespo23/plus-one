@@ -333,29 +333,7 @@ They come pre-loaded with everything needed to get heavy work done.
 `;
 
 
-const AFTER_ROLES = `<!-- PRICING -->
-<section id="pricing" class="py-24">
-  <div class="section-max text-center">
-    <h2 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">One subscription. Everything you need.</h2>
-    <p class="text-secondary text-lg mb-10">Plus One is included in Every's bundle. Currently in invite-only beta.</p>
-
-    <div class="max-w-lg mx-auto bg-white rounded-2xl border border-[#EEE] p-10 mb-8">
-      <h3 class="text-xl font-medium mb-6">Plus One comes included with Every</h3>
-      <div class="flex flex-wrap justify-center gap-3 mb-8">
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Plus One</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Every</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Sparkle</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Spiral</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Cora</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Proof</span>
-        <span class="bg-[#FAFAF7] border border-[#EEE] rounded-full px-4 py-2 text-sm font-medium">Para</span>
-      </div>
-      <a href="#" class="cta-btn bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90 transition">Join the waitlist →</a>
-    </div>
-  </div>
-</section>
-
-<!-- SECURITY -->
+const AFTER_ROLES = `<!-- SECURITY -->
 <section class="py-24" style="background:#F3F2EE;">
   <div class="section-max text-center max-w-3xl">
     <div style="margin-bottom:24px;text-align:center;"><img src="img/security-lock.jpg" style="width:64px;height:auto;mix-blend-mode:multiply;display:inline-block;" alt="Security"></div>
