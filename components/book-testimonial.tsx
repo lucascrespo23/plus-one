@@ -197,7 +197,7 @@ export default function BookTestimonial() {
               <div
                 key={`${agent.name}-profile`}
                 style={{
-                  background: 'linear-gradient(to right, #FFFFFF 92%, #f0efeb)',
+                  background: '#FFFFFF',
                   width: 340,
                   height: 480,
                   boxSizing: 'border-box',
@@ -265,7 +265,7 @@ export default function BookTestimonial() {
               <div
                 key={`${agent.name}-testimonial`}
                 style={{
-                  background: 'linear-gradient(to left, #FFFFFF 92%, #f0efeb)',
+                  background: '#FFFFFF',
                   width: 340,
                   height: 480,
                   boxSizing: 'border-box',
