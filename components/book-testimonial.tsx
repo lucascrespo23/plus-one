@@ -84,22 +84,22 @@ export default function BookTestimonial() {
     book.current?.pageFlip()?.flip(page)
   }, [])
 
-  // Force the empty spread slot to be transparent
-  // The library sets style.cssText on .stf__item elements, overriding CSS.
-  // We use a MutationObserver to continuously enforce transparency on the empty slot.
+  // Force the empty spread slot transparent + move stamp visibility
+  // The library overwrites style.cssText, so we fight it with setProperty every 100ms
   useEffect(() => {
     const interval = setInterval(() => {
       const items = document.querySelectorAll('.stf__item')
-      if (items.length > 0) {
-        // The last .stf__item is the empty right-page slot in spread mode
-        const lastItem = items[items.length - 1] as HTMLElement
-        // Check if it has no meaningful content (empty spread slot)
-        if (lastItem && (!lastItem.children.length || lastItem.children[0]?.children?.length === 0)) {
-          lastItem.style.setProperty('background', 'transparent', 'important')
-          lastItem.style.setProperty('box-shadow', 'none', 'important')
+      // In spread mode with 14 pages + showCover, library creates 15 stf__items
+      // (14 pages + 1 empty slot). The empty slot is the LAST one.
+      // We make ALL stf__items after our 14 pages transparent.
+      items.forEach((item, index) => {
+        if (index >= 14) {
+          const el = item as HTMLElement
+          el.style.setProperty('background', '#F3F2EE', 'important')
+          el.style.setProperty('box-shadow', 'none', 'important')
         }
-      }
-    }, 100)
+      })
+    }, 50)
     return () => clearInterval(interval)
   }, [])
 
@@ -162,6 +162,7 @@ export default function BookTestimonial() {
 
         {/* Right: Book */}
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+          {/* Made by Every stamp — appears on the right side when back cover is showing */}
           <img
             src="/img/made-by-every.jpg"
             alt="Made by Every"
@@ -171,9 +172,10 @@ export default function BookTestimonial() {
               top: '50%',
               transform: 'translateY(-50%)',
               width: 200,
-              opacity: 0.85,
-              zIndex: 1,
+              opacity: currentPage >= totalPages - 2 ? 0.85 : 0,
+              zIndex: 10,
               pointerEvents: 'none',
+              transition: 'opacity 0.8s ease',
             }}
           />
           {/* @ts-ignore */}
