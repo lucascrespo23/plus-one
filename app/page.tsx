@@ -2,6 +2,7 @@ import Bucket from "@/components/ui/bucket";
 import RolesSection from "@/components/roles-section";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { HeroTypewriter } from "@/components/ui/hero-typewriter";
+import BookTestimonial from "@/components/book-testimonial";
 
 const BEFORE_BENTO = `<!-- HERO (no nav) -->
 <section class="relative min-h-screen pt-20 pb-16 overflow-hidden">
@@ -329,89 +330,8 @@ They come pre-loaded with everything needed to get heavy work done.
 </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="py-24" style="background:#F3F2EE;">
-  <div class="section-max">
-    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center mb-16">Every human deserves a Plus One</h2>
+`;
 
-    <!-- Passport Cards with agent images -->
-    <div class="overflow-hidden mb-16 marquee-mask">
-      <div class="marquee-track" style="animation-duration:35s">
-        <div class="passport-card" style="animation: float 4s ease-in-out infinite;">
-          <img src="img/agent3.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Zosia</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Brandon</strong>, COO</p>
-          <p class="text-xs text-secondary mt-1">Works with Austin, Montaige, Dan, R2C2</p>
-        </div>
-        <div class="passport-card" style="animation: float 4.5s ease-in-out infinite;">
-          <img src="img/agent1.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Judd</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Austin</strong>, CTO</p>
-          <p class="text-xs text-secondary mt-1">Works with Milo, Paridhi, Lucas</p>
-        </div>
-        <div class="passport-card" style="animation: float 3.5s ease-in-out infinite;">
-          <img src="img/agent5.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Iris</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Anukshi</strong>, Marketing</p>
-          <p class="text-xs text-secondary mt-1">Works with Zosia, Alfredo, Elle</p>
-        </div>
-        <div class="passport-card" style="animation: float 5s ease-in-out infinite;">
-          <img src="img/agent2.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Jalaiyah</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Elle</strong>, Support Lead</p>
-          <p class="text-xs text-secondary mt-1">Works with Zosia, Iris, Milo</p>
-        </div>
-        <div class="passport-card" style="animation: float 4.2s ease-in-out infinite;">
-          <img src="img/agent4.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Manousos</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Lucas</strong>, Design</p>
-          <p class="text-xs text-secondary mt-1">Works with Judd, Paridhi, Iris</p>
-        </div>
-        <div class="passport-card" style="animation: float 4.8s ease-in-out infinite;">
-          <img src="img/agent6.jpg" class="pfp-lg mb-3" alt="">
-          <h4 class="font-medium text-lg">Alfredo</h4>
-          <p class="text-sm text-secondary mt-1">Reports to <strong>Dan</strong>, Revenue</p>
-          <p class="text-xs text-secondary mt-1">Works with Zosia, Julik, Iris</p>
-        </div>
-        <!-- Duplicates -->
-        <div class="passport-card"><img src="img/agent3.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Zosia</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Brandon</strong>, COO</p></div>
-        <div class="passport-card"><img src="img/agent1.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Judd</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Austin</strong>, CTO</p></div>
-        <div class="passport-card"><img src="img/agent5.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Iris</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Anukshi</strong>, Marketing</p></div>
-        <div class="passport-card"><img src="img/agent2.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Jalaiyah</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Elle</strong>, Support Lead</p></div>
-        <div class="passport-card"><img src="img/agent4.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Manousos</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Lucas</strong>, Design</p></div>
-        <div class="passport-card"><img src="img/agent6.jpg" class="pfp-lg mb-3" alt=""><h4 class="font-medium text-lg">Alfredo</h4><p class="text-sm text-secondary mt-1">Reports to <strong>Dan</strong>, Revenue</p></div>
-      </div>
-    </div>
-
-    <!-- Testimonials with real photos -->
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"Zosia is my go-to. She's my assistant, marketing partner, code writer, and she never drops the ball."</p>
-        <div class="flex items-center gap-3"><img src="img/person5.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Brandon, COO</span></div>
-      </div>
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"Judd shipped an MVP in 2 hours that would have taken us a week. It's like having a senior engineer on call 24/7."</p>
-        <div class="flex items-center gap-3"><img src="img/person1.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Austin, CTO</span></div>
-      </div>
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"Jalaiyah handles support tickets so fast our users think we hired a whole team. Best investment we've made."</p>
-        <div class="flex items-center gap-3"><img src="img/person2.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Elle, Support</span></div>
-      </div>
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"Iris writes better launch copy than most humans. She knows our voice, our tone, and our audience."</p>
-        <div class="flex items-center gap-3"><img src="img/person4.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Anukshi, Marketing</span></div>
-      </div>
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"I promoted myself from account manager to strategist. Zosia handles the day-to-day so I can focus on what matters."</p>
-        <div class="flex items-center gap-3"><img src="img/person3.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Dan, Revenue</span></div>
-      </div>
-      <div class="testimonial-card bg-white rounded-2xl border border-[#EEE] p-8">
-        <p class="text-base leading-relaxed mb-4">"Manousos iterates on design options faster than I can give feedback. It's changed how we ship product."</p>
-        <div class="flex items-center gap-3"><img src="img/person6.jpg" class="pfp" alt=""><span class="text-sm font-semibold">Lucas, Design</span></div>
-      </div>
-    </div>
-  </div>
-</section>`;
 
 const AFTER_ROLES = `<!-- PRICING -->
 <section id="pricing" class="py-24">
@@ -616,6 +536,8 @@ export default function Home() {
       </div>
 
       <div style={{ marginTop: "-100px" }} dangerouslySetInnerHTML={{ __html: REST_BEFORE_BENTO }} />
+
+      <BookTestimonial />
 
       <section style={{ padding: "140px 64px" }}>
         <h2 style={{ margin: 0, color: "#1A1A1A", fontFamily: "'Signifier', Georgia, serif", fontSize: "45px", fontWeight: 400, letterSpacing: "-0.03em", lineHeight: "54px", marginBottom: "12px", textAlign: "center" }}>
