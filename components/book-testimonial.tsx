@@ -196,6 +196,7 @@ export default function BookTestimonial() {
               /* Profile page (even after cover — LEFT side) */
               <div
                 key={`${agent.name}-profile`}
+                className="book-page-left"
                 style={{
                   background: '#FFFFFF',
                   width: 340,
@@ -264,6 +265,7 @@ export default function BookTestimonial() {
               /* Testimonial page (odd after cover — RIGHT side) */
               <div
                 key={`${agent.name}-testimonial`}
+                className="book-page-right"
                 style={{
                   background: '#FFFFFF',
                   width: 340,
